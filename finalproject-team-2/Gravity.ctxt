@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Gravity
+comment0.text=\n\ Write\ a\ description\ of\ class\ Gravity\ here.\n\n\ @author\ Manjari\n\ @version\ 5/27\n
+comment1.params=sprite
+comment1.target=Gravity(SpriteAnimation)
+comment2.params=
+comment2.target=void\ fall()
+comment3.params=
+comment3.target=void\ jump()
+numComments=4
