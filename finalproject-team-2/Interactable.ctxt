@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.target=Interactable
-comment1.params=x\ y\ w\ h\ obj
-comment1.target=Interactable(int,\ int,\ int,\ int,\ javafx.scene.image.Image)
-comment1.text=\n\ pass\ Image\ +\ data\ about\ image\ and\ it\ sets\ it\ up\ in\ the\ right\n
-comment2.params=
-comment2.target=javafx.geometry.Rectangle2D\ getBounds()
-numComments=3
