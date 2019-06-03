@@ -1,4 +1,6 @@
 import javafx.scene.Node;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.*;
 /**
  * Write a description of class LiftButton here.
  *
@@ -7,18 +9,17 @@ import javafx.scene.Node;
  */
 public class LiftButton extends Button
 {
-    private Node player;
-    private Node button;
-    public LiftButton(Node player, int liftX, int liftY, Pane groot)
+    private Lift myLift;
+    public LiftButton( int liftX, int liftY, Lift lift, Pane root)
     {
-        super.player = player;
-        super.button = createEntity(liftX+75, liftY+20, 20, 20, root);
+        super.button = Game.createEntity(liftX+65, liftY-10, 20, 20, Color.RED, root);
+        myLift = lift;
     }
     
-    public void function()
+    public void function(Node player)
     {
-        if(isPressed())
-        entity.setTranslateY(entity.getTranslateY() + 500);
+        if(isPressed(player))
+        myLift.getNode().setTranslateY(myLift.getNode().getTranslateY() + 500);
         }
     }
 

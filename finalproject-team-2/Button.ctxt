@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Button
 comment0.text=\r\n\ Abstract\ class\ Button\ -\ write\ a\ description\ of\ the\ class\ here\r\n\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 06/03/2019\r\n
-comment1.params=
-comment1.target=void\ function()
-comment2.params=
-comment2.target=boolean\ isPressed()
+comment1.params=player
+comment1.target=void\ function(javafx.scene.Node)
+comment2.params=player
+comment2.target=boolean\ isPressed(javafx.scene.Node)
 numComments=3

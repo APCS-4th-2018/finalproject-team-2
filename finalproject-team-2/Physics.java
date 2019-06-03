@@ -21,13 +21,19 @@ public class Physics
     private boolean canJump;
     private double vel;
     private Point2D playervelocity;
+    //Lift
+    private Lift lift;
+    private LiftButton butt;
     public Physics(double g, Pane root, Point2D playervelocity)
     {
+        //initialize physcs stuff
         gForce = g;
         vel = 0;
         this.playervelocity = playervelocity;
         levelWidth = LevelData.getLevel1()[0].length()*60;
         levelHeight = LevelData.getLevel1().length*60;
+        
+        //initialize diff entities
         for(int i = 0; i < LevelData.getLevel1().length; i++){
             String line = LevelData.getLevel1()[i];
             for(int j = 0; j < line.length(); j++)
@@ -39,9 +45,9 @@ public class Physics
                     platforms.add(platform);
                     break;
                     case '2':
-                    Node lift = Game.createEntity(j*60, i*60, 150, 40, Color.WHITE, root);
-                    //Node button = Game.createEntit
-                    platforms.add(lift);
+                    lift = new Lift(root, j, i);
+                    butt = new LiftButton(j*60, i*60, lift, root);
+                    platforms.add(lift.getNode());
                     break;
                     default:
                     break;
@@ -98,4 +104,7 @@ public class Physics
             Game.setCanJump(false);
         }
     }
+    
+    public void doButton()
+   
 }

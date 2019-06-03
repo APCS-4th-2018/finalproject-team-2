@@ -7,10 +7,9 @@ import javafx.scene.Node;
  */
 public abstract class Button
 {
-    protected Node player;
     protected Node button;
-    public abstract void function();
-    public boolean isPressed()
+    public abstract void function(Node player);
+    public boolean isPressed(Node player)
     {
         if(player.getBoundsInParent().intersects(button.getBoundsInParent()))
         return true;
