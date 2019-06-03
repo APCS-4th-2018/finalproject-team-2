@@ -40,7 +40,10 @@ public class Physics
                     break;
                     case '2':
                     Node lift = Game.createEntity(j*60, i*60, 150, 40, Color.WHITE, root);
+                    //Node button = Game.createEntit
                     platforms.add(lift);
+                    break;
+                    default:
                     break;
                 }
         }
