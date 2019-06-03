@@ -9,4 +9,6 @@ comment3.params=value\ entity
 comment3.target=void\ moveY(int,\ javafx.scene.Node)
 comment4.params=
 comment4.target=void\ jumpPlayer()
-numComments=5
+comment5.params=
+comment5.target=Button\ getButton()
+numComments=6

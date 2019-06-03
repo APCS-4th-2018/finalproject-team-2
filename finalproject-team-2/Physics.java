@@ -23,7 +23,7 @@ public class Physics
     private Point2D playervelocity;
     //Lift
     private Lift lift;
-    private LiftButton butt;
+    private Button butt;
     public Physics(double g, Pane root, Point2D playervelocity)
     {
         //initialize physcs stuff
@@ -105,6 +105,6 @@ public class Physics
         }
     }
     
-    public void doButton()
+    public Button getButton(){return butt;}
    
 }
