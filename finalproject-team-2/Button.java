@@ -7,8 +7,8 @@ import javafx.scene.Node;
  */
 public abstract class Button
 {
-    private Node player;
-    private Node button;
+    protected Node player;
+    protected Node button;
     public abstract void function();
     public boolean isPressed()
     {
