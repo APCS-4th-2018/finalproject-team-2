@@ -1,33 +1,41 @@
-
+import javafx.scene.shape.Line;
+import javafx.scene.paint.*;
+import javafx.scene.Node;
+import javafx.scene.layout.Pane;
+import javafx.geometry.Point2D;
 /**
  * Write a description of class Drop here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Manjari Senthilkumar
+ * @version 06/03/2019
  */
 public class Drop
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Drop
-     */
-    public Drop()
+    private int posX,  posY;
+    private int width, height;
+    private Node drop; 
+    private Pane groot;
+    private Point2D vel = new Point2D(0,1);
+    private int ySpeed = 1;
+    Physics phys;
+    public Drop(int x, int y, int w, int h, Pane root)
     {
-        // initialise instance variables
-        x = 0;
+        posX = x;
+        posY = y;
+        width = w;
+        height = h; 
+        groot = root;
+        vel = new Point2D(0,0);
+        phys = new Physics(10,root, vel);
+        show();
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public void fall()
     {
-        // put your code here
-        return x + y;
+        phys.moveY(posY, drop);
     }
+    public void show()
+    {
+        drop = Game.createEntity(posX, posY, width, height, Color.ALICEBLUE, groot);
+    }
+    
 }
