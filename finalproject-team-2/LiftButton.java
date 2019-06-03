@@ -19,7 +19,7 @@ public class LiftButton extends Button
     public void function(Node player)
     {
         if(isPressed(player))
-        myLift.getNode().setTranslateY(myLift.getNode().getTranslateY() + 500);
+            myLift.getNode().setTranslateY(myLift.getNode().getTranslateY() + 500);//problem
         }
     }
 
