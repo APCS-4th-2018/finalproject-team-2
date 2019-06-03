@@ -132,7 +132,8 @@ public class Game extends Application{
             phys.moveX(5, player);
         if(playervelocity.getY() < 10)
             playervelocity = playervelocity.add(0,1); //x does not increase in velocity
-        rain.fall();
+        //rain.fall();
+        phys.getButton().function(player);
         phys.moveY((int)playervelocity.getY(), player);
         
     }
