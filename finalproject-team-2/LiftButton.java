@@ -52,8 +52,8 @@ public class LiftButton extends Button
         ptr.setNode(myLift);
         ptr.setDuration(Duration.seconds(3));
         ptr.setPath(path);
-        ptr.setCycleCount(2);
-        ptr.setAutoReverse(true);
+        //ptr.setCycleCount(2);
+        //ptr.setAutoReverse(true);
         
         //transition - player
         ptrp = new PathTransition();
