@@ -56,7 +56,6 @@ public class PhysicsMove
                     else
                     if(entity.getTranslateY() == platform.getTranslateY() + 60)
                         return;
-            //gravity
             entity.setTranslateY(entity.getTranslateY() + (movingDown ? 1 : - 1));
         }
     }

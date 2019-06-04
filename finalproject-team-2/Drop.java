@@ -28,7 +28,7 @@ public class Drop
         groot = root;
         vel = new Point2D(0,0);
         build = new Build(10,root, vel);
-        phys = new PhysicsMove(build.platforms);
+        phys = new PhysicsMove(build.getPlatform());
         show();
     }
     public void fall()

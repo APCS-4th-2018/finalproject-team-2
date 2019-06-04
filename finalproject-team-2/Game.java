@@ -80,7 +80,7 @@ public class Game extends Application{
         //rain = new Rain(gameRoot);
         rain = new Rain02(gameRoot);
         build = new Build(10,gameRoot, playervelocity);
-        phys = new PhysicsMove(build.platforms);
+        phys = new PhysicsMove(build.getPlatform());
         
         //cam
         String line;

@@ -15,7 +15,7 @@ import javafx.geometry.Point2D;
 public class Build
 {
     private double gForce;
-    public static ArrayList<Node> platforms = new ArrayList<Node>();
+    private ArrayList<Node> platforms = new ArrayList<Node>();
     private double levelWidth;
     private double levelHeight;
     private boolean canJump;
@@ -105,7 +105,7 @@ public class Build
         }
     }
     */
-    
+    public ArrayList<Node> getPlatform(){return platforms;}
     public Button getButton(){return butt;}
    
 }
