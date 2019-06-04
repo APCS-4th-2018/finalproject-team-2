@@ -75,8 +75,8 @@ public class Game extends Application{
         //background
         Rectangle bg = new Rectangle(720,3000);
         
-        ImageView bgImg = convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\gvzpafno.png");
-        Image patt = convertImage("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\stone_texture4.jpg");
+        ImageView bgImg = convertImageView("https://drive.google.com/uc?id=1EPXIFlbfh8mxET0PtYNq6dWdOKssyW7R");
+        Image patt = convertImage("https://drive.google.com/uc?id=1DJbhQwFR6bxv3fBlOdJZ6vhudywLVRsN");
         //bgImg.setViewport(new Rectangle2D(0,800,720,1800));
         gameRoot.getChildren().add(bgImg);
         //Rain
@@ -93,7 +93,7 @@ public class Game extends Application{
         player = createEntity(90,2100,40,40,Color.TRANSPARENT,gameRoot);
 
         //sprite
-        spriteImg = convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\imageedit_1_9167375545.png");
+        spriteImg = convertImageView("https://drive.google.com/uc?id=1myW3UWhQDgABQOIDNStdpgK0o6HbH0pE");
         spriteImg.setViewport(new Rectangle2D(0,0,37,62));
         sprite = new Sprite(
             spriteImg,
