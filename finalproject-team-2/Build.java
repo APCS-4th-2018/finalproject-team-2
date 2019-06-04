@@ -12,10 +12,10 @@ import javafx.geometry.Point2D;
  * @author Manjari Senthilkumar
  * @version 06/02/2019
  */
-public class Physics
+public class Build
 {
     private double gForce;
-    private ArrayList<Node> platforms = new ArrayList<Node>();
+    public static ArrayList<Node> platforms = new ArrayList<Node>();
     private double levelWidth;
     private double levelHeight;
     private boolean canJump;
@@ -24,7 +24,7 @@ public class Physics
     //Lift
     private Lift lift;
     private Button butt;
-    public Physics(double g, Pane root, Point2D playervelocity)
+    public Build(double g, Pane root, Point2D playervelocity)
     {
         //initialize physcs stuff
         gForce = g;
@@ -54,7 +54,7 @@ public class Physics
                 }
         }
     }
-    
+    /*
     public void moveX(int value, Node entity)
     {
         boolean movingRight = value > 0;
@@ -104,6 +104,7 @@ public class Physics
             Game.setCanJump(false);
         }
     }
+    */
     
     public Button getButton(){return butt;}
    

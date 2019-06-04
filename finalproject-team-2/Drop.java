@@ -17,7 +17,8 @@ public class Drop
     private Pane groot;
     private Point2D vel = new Point2D(0,1);
     private int ySpeed = 1;
-    Physics phys;
+    Build build;
+    PhysicsMove phys;
     public Drop(int x, int y, int w, int h, Pane root)
     {
         posX = x;
@@ -26,7 +27,8 @@ public class Drop
         height = h; 
         groot = root;
         vel = new Point2D(0,0);
-        phys = new Physics(10,root, vel);
+        build = new Build(10,root, vel);
+        phys = new PhysicsMove(build.platforms);
         show();
     }
     public void fall()

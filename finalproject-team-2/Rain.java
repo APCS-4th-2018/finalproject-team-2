@@ -19,7 +19,8 @@ public class Rain
    private int dVel;
    private Point2D[] vel = new Point2D[300];
    private Node[] drops = new Node[300];
-   Physics phys;
+   Build phys;
+   PhysicsMove physMove;
    public Rain(Pane groot)
    {
        for(int i = 0; i < drops.length; i++)
@@ -31,7 +32,8 @@ public class Rain
            height = (int)(Math.random()*5+10 );
            drops[i] = Game.createEntity((int)posX, (int)posY, width,height,Color.ALICEBLUE, groot);
        }
-        phys = new Physics(10,groot,new Point2D(0,0));
+        phys = new Build(10,groot,new Point2D(0,0));
+        physMove = new PhysicsMove(phys.platforms);
    }
    
    public void move()
@@ -39,7 +41,7 @@ public class Rain
        for(int i = 0; i < drops.length; i++){
        
             fall(i); //x does not increase in velocity
-       phys.moveY((int)vel[i].getY(), drops[i]);
+       physMove.moveY((int)vel[i].getY(), drops[i]);
     }
    }
    private void fall(int i)

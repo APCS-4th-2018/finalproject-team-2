@@ -25,7 +25,8 @@ public class Game extends Application{
     private HashMap<KeyCode, Boolean> keys = new HashMap<KeyCode, Boolean>();
 
     private ArrayList<Node> platforms = new ArrayList<Node>();
-    private Physics phys;
+    Build build;
+    PhysicsMove phys;
     private static boolean canJump = true;
 
     private Pane appRoot = new Pane();
@@ -78,7 +79,8 @@ public class Game extends Application{
         //Rain
         //rain = new Rain(gameRoot);
         rain = new Rain02(gameRoot);
-        phys = new Physics(10, gameRoot, playervelocity);
+        build = new Build(10,gameRoot, playervelocity);
+        phys = new PhysicsMove(build.platforms);
         
         //cam
         String line;
@@ -133,7 +135,7 @@ public class Game extends Application{
         if(playervelocity.getY() < 10)
             playervelocity = playervelocity.add(0,1); //x does not increase in velocity
         //rain.fall();
-        phys.getButton().function(player);
+        build.getButton().function(player);
         phys.moveY((int)playervelocity.getY(), player);
         
     }
