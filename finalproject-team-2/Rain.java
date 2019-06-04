@@ -33,7 +33,7 @@ public class Rain
            drops[i] = Game.createEntity((int)posX, (int)posY, width,height,Color.ALICEBLUE, groot);
        }
         phys = new Build(10,groot,new Point2D(0,0));
-        physMove = new PhysicsMove(phys.platforms);
+        physMove = new PhysicsMove(phys.getPlatform());
    }
    
    public void move()
