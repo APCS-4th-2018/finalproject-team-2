@@ -46,6 +46,9 @@ public class Game extends Application{
 
     private int levelWidth;
     private int levelHeight;
+    private int liftCountDown = 5000;
+    private boolean liftUp = false;
+    
     @Override
     public void start(Stage stage) throws Exception
     {
@@ -136,7 +139,18 @@ public class Game extends Application{
             playervelocity = playervelocity.add(0,1); //x does not increase in velocity
         //rain.fall();
         build.getButton().function(player);
+        
+        if (liftUp)
+        {
+            liftCountDown--;
+            if (liftCountDown == 0)
+            {
+               ((LiftButton) build.getButton()).down();
+                liftUp = false;
+            }
+        }
         phys.moveY((int)playervelocity.getY(), player);
+        
         
     }
 
@@ -149,6 +163,11 @@ public class Game extends Application{
 
     public static void setCanJump(boolean status){canJump = status;}
 
+    public void startLiftCountDown()
+    {
+        liftUp = true;
+        liftCountDown = 5000;
+    }
     public void jumpPlayer()
     {
         if(canJump)

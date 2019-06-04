@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 import javafx.scene.Node;
-
+import javafx.geometry.Bounds;
 import javafx.geometry.Point2D;
 /**
  * Write a description of class PhysicsMove here.
@@ -41,22 +41,35 @@ public class PhysicsMove
     public void moveY(int value, Node entity)
     {
         boolean movingDown = value > 0;
+        double ty = 0;
+        double ty1 = 0;
+        Bounds b = null;
+        Bounds b1 = null;
+        
+        b = entity.getBoundsInParent();
 
         for(int i = 0; i < Math.abs(value); i++){
-            for(Node platform : platforms)
-                if(entity.getBoundsInParent().intersects(platform.getBoundsInParent()))
+            ty = entity.getTranslateY();
+            b = entity.getBoundsInParent();
+        
+            for(Node platform : platforms){
+              
+                b1 = platform.getBoundsInParent();
+                ty1 = platform.getTranslateY();
+                if(b.intersects(b1))
                     if(movingDown){
-                        if(entity.getTranslateY() +40 == platform.getTranslateY())
+                        if(ty +40 == ty1)
                         {
-                            entity.setTranslateY(entity.getTranslateY()-1);
+                            entity.setTranslateY(ty-1);
                             Game.setCanJump(true);
                             return;
                         }
                     }
                     else
-                    if(entity.getTranslateY() == platform.getTranslateY() + 60)
+                    if(ty == ty1 + 60)
                         return;
-            entity.setTranslateY(entity.getTranslateY() + (movingDown ? 1 : - 1));
+             }
+            entity.setTranslateY(ty + (movingDown ? 1 : - 1));
         }
     }
 

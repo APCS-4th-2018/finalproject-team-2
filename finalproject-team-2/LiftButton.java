@@ -12,6 +12,8 @@ import javafx.animation.Timeline;
 import javafx.geometry.Point2D;
 
 import javafx.util.Duration;
+import java.util.Timer; 
+import java.util.TimerTask; 
 /**
  * Write a description of class LiftButton here.
  *
@@ -28,6 +30,7 @@ public class LiftButton extends Button
     private Line path, pathp;
     private double posX, posY;
     private Group liftGroup;
+  
     
     public LiftButton( int liftX, int liftY, Lift lift, Pane root)
     {
@@ -50,14 +53,14 @@ public class LiftButton extends Button
         //transition - initialize
         ptr = new PathTransition();
         ptr.setNode(myLift);
-        ptr.setDuration(Duration.seconds(3));
+        ptr.setDuration(Duration.seconds(0.5));
         ptr.setPath(path);
-        //ptr.setCycleCount(2);
-        //ptr.setAutoReverse(true);
+        ptr.setCycleCount(2);
+        ptr.setAutoReverse(true);
         
         //transition - player
         ptrp = new PathTransition();
-        ptrp.setDuration(Duration.seconds(3));
+        ptrp.setDuration(Duration.seconds(0.5));
         ptrp.setCycleCount(1);
         //ptrp.setAutoReverse(true);
       
@@ -82,6 +85,12 @@ public class LiftButton extends Button
             ptr.play();
             //phys.moveY(-10,player);
             
+            
         }
+    }
+    
+    public void down()
+    {
+        System.out.println("Lift going down");
     }
 }
