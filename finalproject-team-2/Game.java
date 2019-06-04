@@ -158,6 +158,16 @@ public class Game extends Application{
         }
     }
 
+    public static Node createStandAloneEntity(int x, int y, int w, int h, Paint fill, Pane root)
+    {
+        Rectangle entity = new Rectangle(w,h);
+        entity.setTranslateX(x);
+        entity.setTranslateY(y);
+        entity.setFill(fill);
+
+        return entity;
+    }
+
     public static Node createEntity(int x, int y, int w, int h, Paint fill, Pane root)
     {
         Rectangle entity = new Rectangle(w,h);
