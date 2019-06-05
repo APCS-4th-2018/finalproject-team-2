@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=PortalButton
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ portderButton\ here.\r\n\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 06/04/2019\r\n
+comment1.params=root\ portal
+comment1.target=PortalButton(javafx.scene.layout.Pane,\ Portal)
+comment2.params=player
+comment2.target=void\ function(javafx.scene.Node)
+numComments=3

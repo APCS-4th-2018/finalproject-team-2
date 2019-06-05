@@ -89,8 +89,5 @@ public class LiftButton extends Button
         }
     }
     
-    public void down()
-    {
-        System.out.println("Lift going down");
-    }
+    
 }

@@ -24,6 +24,7 @@ public class Build
     //Interactable objects
     private Lift lift;
     private Ladder ladder;
+    private Portal portal;
     private ArrayList<Button> butt = new ArrayList<Button>();
     public Build(double g, Pane root, Point2D playervelocity) throws Exception
     {
@@ -50,9 +51,17 @@ public class Build
                     butt.add(new LiftButton(j*60, i*60, lift, root));
                     platforms.add(lift.getNode());
                     break;
+                    
                     case '3':
                     ladder = new Ladder(root, j , i,Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\ladder2.jpg"));
                     butt.add(new LadderButton(j*60, i*60, root, ladder));
+                    break;
+                    
+                    case '4' :
+                    portal = new Portal(root, j , i,Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\stone_texture.jpg")); 
+                    butt.add(new PortalButton(root, portal));
+                    break;
+                    
                     default:
                     break;
                 }
