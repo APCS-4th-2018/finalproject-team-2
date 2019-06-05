@@ -17,13 +17,14 @@ public class LadderButton extends Button
     private PathTransition ptr;
     private Node myLadder;
     private Line path;
-    private int posX, posY;
+    private double posX, posY;
     public LadderButton(int ladX, int ladY, Pane root, Ladder ladder)
     {
        super.button = Game.createEntity(ladX+75, ladY+300, 20, 20, Color.RED, root);
        myLadder = ladder.getNode();
-       posX, 
-       path = new Line(l, ladY, posX, posY - 500);
+       posX = ladX + ladder.getWidth()/2.0;
+       posY = ladY + ladder.getHeight();
+       path = new Line(posX, posY, posX, posY - ladder.getHeight());
     }
     
     public void function(Node player)
