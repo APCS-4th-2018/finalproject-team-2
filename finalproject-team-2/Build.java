@@ -60,6 +60,7 @@ public class Build
                     case '4' :
                     portal = new Portal(root, j , i,Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\stone_texture.jpg")); 
                     butt.add(new PortalButton(root, portal));
+                    platforms.add(portal.getNode());
                     break;
                     
                     default:
