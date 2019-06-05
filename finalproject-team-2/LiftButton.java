@@ -46,21 +46,21 @@ public class LiftButton extends Button
         posX = myLift.getTranslateX()+75;
         posY = myLift.getTranslateY()+20;
         path = new Line(posX, posY, posX, posY - 500);//moves up 500 and back
-        pathp = new Line(posX, posY-20, posX, posY - 520);
+        pathp = new Line(posX, posY+10, posX, posY - 500);
         
 
         
         //transition - initialize
         ptr = new PathTransition();
         ptr.setNode(myLift);
-        ptr.setDuration(Duration.seconds(0.5));
+        ptr.setDuration(Duration.seconds(3));
         ptr.setPath(path);
         ptr.setCycleCount(2);
         ptr.setAutoReverse(true);
         
         //transition - player
         ptrp = new PathTransition();
-        ptrp.setDuration(Duration.seconds(0.5));
+        ptrp.setDuration(Duration.seconds(3));
         ptrp.setCycleCount(1);
         //ptrp.setAutoReverse(true);
       
