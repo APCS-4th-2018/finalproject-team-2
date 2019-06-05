@@ -24,15 +24,16 @@ public class LadderButton extends Button
        myLadder = ladder.getNode();
        posX = ladX + ladder.getWidth()/2.0;
        posY = ladY + ladder.getHeight();
-       path = new Line(posX, posY, posX, posY - ladder.getHeight());
+       
     }
     
     public void function(Node player)
     {
         if(super.isPressed(player)){
         ptr = new PathTransition();
-        ptr.setNode(myLadder);
-        ptr.setDuration(Duration.seconds(3));
+        path = new Line(player.getTranslateX(), player.getTranslateY(), player.getTranslateX(), player.getTranslateY()-370);
+        ptr.setNode(player);
+        ptr.setDuration(Duration.seconds(2));
         ptr.setPath(path);
         ptr.play();
     }
