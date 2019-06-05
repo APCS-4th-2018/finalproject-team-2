@@ -19,7 +19,7 @@ public class Drop
     private int ySpeed = 1;
     Build build;
     PhysicsMove phys;
-    public Drop(int x, int y, int w, int h, Pane root)
+    public Drop(int x, int y, int w, int h, Pane root) throws Exception
     {
         posX = x;
         posY = y;

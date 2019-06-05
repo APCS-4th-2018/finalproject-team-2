@@ -21,10 +21,11 @@ public class Build
     private boolean canJump;
     private double vel;
     private Point2D playervelocity;
-    //Lift
+    //Interactable objects
     private Lift lift;
-    private Button butt;
-    public Build(double g, Pane root, Point2D playervelocity)
+    private Ladder ladder;
+    private ArrayList<Button> butt = new ArrayList<Button>();
+    public Build(double g, Pane root, Point2D playervelocity) throws Exception
     {
         //initialize physcs stuff
         gForce = g;
@@ -46,9 +47,11 @@ public class Build
                     break;
                     case '2':
                     lift = new Lift(root, j, i);
-                    butt = new LiftButton(j*60, i*60, lift, root);
+                    butt.add(new LiftButton(j*60, i*60, lift, root));
                     platforms.add(lift.getNode());
                     break;
+                    case '3':
+                    ladder = new Ladder(root, j , i,Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\ladder2.jpg"));
                     default:
                     break;
                 }
@@ -106,6 +109,6 @@ public class Build
     }
     */
     public ArrayList<Node> getPlatform(){return platforms;}
-    public Button getButton(){return butt;}
+    public ArrayList<Button> getButton(){return butt;}
    
 }

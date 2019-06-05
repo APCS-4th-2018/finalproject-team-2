@@ -9,7 +9,7 @@ public class Rain02
 
 {
     private Drop d;
-    public Rain02(Pane root)
+    public Rain02(Pane root) throws Exception
     {
         d = new Drop(360,1000,2,10,root);
     }

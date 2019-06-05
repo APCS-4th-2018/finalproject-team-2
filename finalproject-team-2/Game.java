@@ -138,17 +138,19 @@ public class Game extends Application{
         if(playervelocity.getY() < 10)
             playervelocity = playervelocity.add(0,1); //x does not increase in velocity
         //rain.fall();
-        build.getButton().function(player);//add buttons to array 
+        for(int i = 0; i < build.getButton().size(); i++){
+            build.getButton().get(i).function(player);//add buttons to array 
         
         if (liftUp)
         {
             liftCountDown--;
             if (liftCountDown == 0)
             {
-               ((LiftButton) build.getButton()).down();
+               ((LiftButton) build.getButton().get(i)).down();
                 liftUp = false;
             }
         }
+    }
         phys.moveY((int)playervelocity.getY(), player);
         
         
