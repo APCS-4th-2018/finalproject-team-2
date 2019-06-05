@@ -17,8 +17,8 @@ public class Ladder
      */
     public Ladder(Pane root, int j, int i, ImageView pic)
     {
-        width = (int)pic.getFitWidth();
-        height = (int)pic.getFitHeight();
+        width = 150;//(int)pic.getFitWidth();
+        height = 300;//(int)pic.getFitHeight();
         platform = Game.createEntity(j*60, i*60, width, height, Color.BURLYWOOD, root);
     }
 

@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=LadderButton
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ LadderButton\ here.\r\n\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 06/04/2019\r\n
+comment1.params=ladX\ ladY\ root\ ladder
+comment1.target=LadderButton(int,\ int,\ javafx.scene.layout.Pane,\ Ladder)
+comment2.params=player
+comment2.target=void\ function(javafx.scene.Node)
+numComments=3

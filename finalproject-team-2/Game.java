@@ -40,7 +40,7 @@ public class Game extends Application{
     //player sprite
     Sprite sprite;
     ImageView spriteImg;
-    
+
     //Rain 
     Rain02 rain;
 
@@ -48,7 +48,7 @@ public class Game extends Application{
     private int levelHeight;
     private int liftCountDown = 5000;
     private boolean liftUp = false;
-    
+
     @Override
     public void start(Stage stage) throws Exception
     {
@@ -74,7 +74,7 @@ public class Game extends Application{
     {
         //background
         Rectangle bg = new Rectangle(720,3000);
-        
+
         ImageView bgImg = convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\gvzpafno.png");
         //Image patt = convertImage("https://drive.google.com/uc?id=1DJbhQwFR6bxv3fBlOdJZ6vhudywLVRsN");
         //bgImg.setViewport(new Rectangle2D(0,800,720,1800));
@@ -84,7 +84,7 @@ public class Game extends Application{
         rain = new Rain02(gameRoot);
         build = new Build(10,gameRoot, playervelocity);
         phys = new PhysicsMove(build.getPlatform());
-        
+
         //cam
         String line;
         levelWidth = LevelData.getLevel1()[0].length()*60;
@@ -118,12 +118,12 @@ public class Game extends Application{
                 }
             });
         appRoot.getChildren().addAll(gameRoot);
-        
+
     }
 
     private void update()
     {
-        
+
         //getTranslate computes layoutX - current X position and
         //sprite follows node
         sprite.setTranslateX(player.getTranslateX());
@@ -138,22 +138,23 @@ public class Game extends Application{
         if(playervelocity.getY() < 10)
             playervelocity = playervelocity.add(0,1); //x does not increase in velocity
         //rain.fall();
+
         for(int i = 0; i < build.getButton().size(); i++){
             build.getButton().get(i).function(player);//add buttons to array 
-        
-        if (liftUp)
-        {
-            liftCountDown--;
-            if (liftCountDown == 0)
+            /*
+            if (liftUp)
             {
-               ((LiftButton) build.getButton().get(i)).down();
-                liftUp = false;
+                liftCountDown--;
+                if (liftCountDown == 0)
+                {
+                    ((LiftButton) build.getButton().get(i)).down();
+                    liftUp = false;
+                }
             }
+            */
         }
-    }
         phys.moveY((int)playervelocity.getY(), player);
-        
-        
+
     }
 
     private boolean isPressed(KeyCode key)
@@ -170,6 +171,7 @@ public class Game extends Application{
         liftUp = true;
         liftCountDown = 5000;
     }
+
     public void jumpPlayer()
     {
         if(canJump)
