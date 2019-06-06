@@ -43,7 +43,7 @@ public class Game extends Application{
     ImageView spriteImg;
 
     //Rain 
-    Rain[] rain = new Rain[5];
+    Rain[] rain = new Rain[10];
 
     private int levelWidth;
     private int levelHeight;

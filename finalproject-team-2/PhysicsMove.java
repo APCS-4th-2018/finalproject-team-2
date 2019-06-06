@@ -87,8 +87,7 @@ public class PhysicsMove
         for(int i = 0; i < Math.abs(value); i++){
             ty = entity.getTranslateY();
             b = entity.getBoundsInParent();
-        
-            
+
             entity.setTranslateY(ty + (movingDown ? 1 : - 1));
         }
     }
