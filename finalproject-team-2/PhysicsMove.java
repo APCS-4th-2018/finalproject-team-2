@@ -72,6 +72,26 @@ public class PhysicsMove
             entity.setTranslateY(ty + (movingDown ? 1 : - 1));
         }
     }
+    
+    
+    public void moveYNoColl(int value, Node entity)
+    {
+        boolean movingDown = value > 0;
+        double ty = 0;
+        double ty1 = 0;
+        Bounds b = null;
+        Bounds b1 = null;
+        
+        b = entity.getBoundsInParent();
+
+        for(int i = 0; i < Math.abs(value); i++){
+            ty = entity.getTranslateY();
+            b = entity.getBoundsInParent();
+        
+            
+            entity.setTranslateY(ty + (movingDown ? 1 : - 1));
+        }
+    }
 
     public void jumpPlayer()
     {

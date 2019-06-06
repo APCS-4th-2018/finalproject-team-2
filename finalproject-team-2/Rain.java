@@ -42,14 +42,18 @@ public class Rain
        for(int i = 0; i < drops.length; i++){
        
             fall(); //x does not increase in velocity
-            physMove.moveY((int)vel.getY(), drops[i]);
+            posY = drops[i].getTranslateY()+vel.getY();
+            drops[i].setTranslateY(posY);
     }
    }
    private void fall()
    {
-       vel = vel.add(0, dVel);
+       if (vel.getY() < 10 )
+           vel = vel.add(0, dVel);
+       
        if(posY > 3000)
            posY = Math.random()*1000-200;
+           
     }
    /*
     public Point2D getVel()
