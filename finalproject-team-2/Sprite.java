@@ -11,10 +11,14 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 /**
+ * 
+ * 
+ * 
  * @author Manjari Senthilkumar
  * @Version 6/1/2019
  */
-public class Sprite extends Transition {
+public class Sprite extends Transition 
+{
 
     private final ImageView imageView;
     private final int count;
@@ -29,12 +33,12 @@ public class Sprite extends Transition {
     private int lastIndex;
     private int vel;
     public Sprite(
-            ImageView imageView, 
-            Duration duration, 
-            int count,   int columns,
-            int offsetX, int offsetY,
-            int width,   int height,
-            int x,       int y) {
+    ImageView imageView, 
+    Duration duration, 
+    int count,   int columns,
+    int offsetX, int offsetY,
+    int width,   int height,
+    int x,       int y) {
         this.imageView = imageView;
         this.count     = count;
         this.columns   = columns;
@@ -49,45 +53,117 @@ public class Sprite extends Transition {
         setInterpolator(Interpolator.LINEAR);
     }
 
-    protected void interpolate(double k) {
+    protected void interpolate(double k) 
+    {
         final int index = Math.min((int) Math.floor(k * count), count - 1);
-        if (index != lastIndex) {
+        if (index != lastIndex) 
+        {
             final int x = (index % columns) * width  + offsetX;
             final int y = (index / columns) * height + offsetY;
             imageView.setViewport(new Rectangle2D(x, y, width, height));
             lastIndex = index;
         }
     }
-    public int getOffsetX(){return offsetX;}
-    public int getOffsetY(){return offsetY;}
-    public int getVel(){return vel;}
-    public void setVel(int vel){this.vel = vel;}
-    public void setX(double x){posX = x; imageView.setX(posX);}
-    public void setY(double y){posY = y; imageView.setY(posY);}
-    public DoubleProperty translateXProperty(){return imageView.translateXProperty();}
+    
+    /**
+     * 
+     * 
+     */
+    public int getOffsetX()
+    {
+        return offsetX;
+    }
 
-    public double getTranslateX() {
+    /**
+     * 
+     */
+    public int getOffsetY()
+    {
+        return offsetY;
+    }
+
+    public int getVel()
+    {
+        return vel;
+    }
+
+    public void setVel(int vel)
+    {
+        this.vel = vel;
+    }
+
+    public void setX(double x)
+    {
+        posX = x; imageView.setX(posX);
+    }
+
+    public void setY(double y)
+    {
+        posY = y; imageView.setY(posY);
+    }
+
+    /**
+     * 
+     */
+    public DoubleProperty translateXProperty()
+    {
+        return imageView.translateXProperty();
+    }
+
+    /**
+     * gets tehvalue of the property translateX
+     */
+    public double getTranslateX() 
+    {
         return imageView.getTranslateX();
     }
-    public double getTranslateY() {
+
+    /**
+     * gets the value of the property translateY
+     */
+    public double getTranslateY() 
+    {
         return imageView.getTranslateY();
     }
-    public void setTranslateX(double x){imageView.setTranslateX(x);}
-    public void setTranslateY(double y){imageView.setTranslateY(y);}
-    public double getY() {
-        
+
+    /**
+     * sets the value of the property translateX
+     */
+    public void setTranslateX(double x)
+    {
+        imageView.setTranslateX(x);
+    }
+
+    /**
+     * sets the value of the property translateY
+     */
+    public void setTranslateY(double y)
+    {
+        imageView.setTranslateY(y);
+    }
+
+    /**
+     * returns the y coordinate of the sprite sheet
+     */
+    public double getY() 
+    {
         return posY;
     }
-    
+
+    /**
+     * returns the width of the scene
+     */
     public int getWidth() {
-        
+
         return width;
     }
-    
+
+    /**
+     * returns the height of the scene
+     */
     public int getHeight() {
-        
+
         return height;
     }
-    
 
 }
