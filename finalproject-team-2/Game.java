@@ -43,7 +43,7 @@ public class Game extends Application{
     ImageView spriteImg;
 
     //Rain 
-    Rain02 rain;
+    Rain[] rain = new Rain[5];
 
     private int levelWidth;
     private int levelHeight;
@@ -81,7 +81,8 @@ public class Game extends Application{
         gameRoot.getChildren().add(bgImg);
         //Rain
         //rain = new Rain(gameRoot);
-        rain = new Rain02(gameRoot);
+        for(int i = 0; i < rain.length; i++)
+            rain[i] = new Rain(gameRoot);
         build = new Build(10,gameRoot, playervelocity);
         phys = new PhysicsMove(build.getPlatform());
         health = new Health(gameRoot);
@@ -137,7 +138,8 @@ public class Game extends Application{
             phys.moveX(5, player);
         if(playervelocity.getY() < 10)
             playervelocity = playervelocity.add(0,1); //x does not increase in velocity
-        rain.fall();
+        for(int i = 0; i < rain.length; i++)
+            rain[i].move();
 
         for(int i = 0; i < build.getButton().size(); i++){
             build.getButton().get(i).function(player);//add buttons to array 

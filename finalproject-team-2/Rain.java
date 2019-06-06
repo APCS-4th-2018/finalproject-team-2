@@ -16,12 +16,12 @@ public class Rain
    private double posY;
    private int width;
    private int height;
-   private int dVel;
+   private int dVel = 1;
    private Point2D vel;
-   private Node[] drops = new Node[300];
+   private Node[] drops = new Node[5];
    private Build phys;
    private PhysicsMove physMove;
-   public Rain(Pane groot)
+   public Rain(Pane groot) throws Exception
    {
        for(int i = 0; i < drops.length; i++)
        {
@@ -34,21 +34,22 @@ public class Rain
        }
         phys = new Build(10,groot,new Point2D(0,0));
         physMove = new PhysicsMove(phys.getPlatform());
+       
    }
    
    public void move()
    {
        for(int i = 0; i < drops.length; i++){
        
-            fall(i); //x does not increase in velocity
-            physMove.moveY((int)vel[i].getY(), drops[i]);
+            fall(); //x does not increase in velocity
+            physMove.moveY((int)vel.getY(), drops[i]);
     }
    }
    private void fall()
    {
        vel = vel.add(0, dVel);
        if(posY > 3000)
-           posY = Math.random()*100-200;
+           posY = Math.random()*1000-200;
     }
    /*
     public Point2D getVel()

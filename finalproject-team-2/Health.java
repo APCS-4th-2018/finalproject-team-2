@@ -19,7 +19,7 @@ public class Health
         //barimgV.setPreserveRatio(true);
         //barimgV.setFitWidth(200);
         //barimgV.setFitHeight(20);
-        barimgV.setLayoutX(200);
+        //barimgV.setLayoutX(200);
         root.getChildren().add(barimgV);
         
         barimgV.translateYProperty().addListener((obs, old, newValue) -> {
