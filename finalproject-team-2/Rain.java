@@ -18,7 +18,7 @@ public class Rain
    private int height;
    private int dVel = 1;
    private Point2D vel;
-   private Node[] drops = new Node[10];
+   private Node[] drops = new Node[30];
    private Build phys;
    private PhysicsMove physMove;
    public Rain(Pane groot) throws Exception
@@ -27,7 +27,7 @@ public class Rain
        {
            posX = Math.random()*720;
            posY = Math.random()*1000-200;
-           vel = new Point2D(0,0);
+           vel = new Point2D(0,Math.random()*12);
            width = (int)(Math.random()*2+2);
            height = (int)(Math.random()*5+10 );
            drops[i] = Game.createEntity((int)posX, (int)posY, width,height,Color.ALICEBLUE, groot);
@@ -41,18 +41,18 @@ public class Rain
    {
        for(int i = 0; i < drops.length; i++){
        
-            fall(); //x does not increase in velocity
+            fall(i); //x does not increase in velocity
             posY = drops[i].getTranslateY()+vel.getY();
             drops[i].setTranslateY(posY);
     }
    }
-   private void fall()
+   private void fall(int i)
    {
-       if (vel.getY() < 10 )
+       if (vel.getY() < 3 )
            vel = vel.add(0, dVel);
        
-       if(posY > 3000)
-           posY = Math.random()*1000-200;
+       if(drops[i].getTranslateY() > 3000)
+          drops[i].setTranslateY(Math.random()*1000-200);
            
     }
    /*

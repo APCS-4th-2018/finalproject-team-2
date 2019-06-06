@@ -32,7 +32,7 @@ public class Game extends Application{
 
     private Pane appRoot = new Pane();
     private Pane gameRoot = new Pane();
-    private Pane uiRoot = new Pane();
+    private Pane healthRoot = new Pane();
     private Pane all = new Pane();
     //player node
     private Node player;
@@ -43,8 +43,9 @@ public class Game extends Application{
     ImageView spriteImg;
 
     //Rain 
-    Rain[] rain = new Rain[10];
-
+    Rain[] rain = new Rain[5];
+    
+    //size data
     private int levelWidth;
     private int levelHeight;
     
@@ -85,13 +86,13 @@ public class Game extends Application{
             rain[i] = new Rain(gameRoot);
         build = new Build(10,gameRoot, playervelocity);
         phys = new PhysicsMove(build.getPlatform());
-        health = new Health(gameRoot);
+        
         //cam
         String line;
         levelWidth = LevelData.getLevel1()[0].length()*60;
         levelHeight = LevelData.getLevel1().length*60;
         //sprite control box
-        player = createEntity(90,2100,40,40,Color.TRANSPARENT,gameRoot);
+        player = createEntity(90,1500,40,40,Color.TRANSPARENT,gameRoot);
 
         //sprite
         spriteImg = convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\imageedit_1_9167375545.png");
@@ -118,8 +119,9 @@ public class Game extends Application{
                     gameRoot.setLayoutY(-(offset - 800));
                 }
             });
+        health = new Health(gameRoot);
         appRoot.getChildren().addAll(gameRoot);
-
+        
     }
 
     private void update()
@@ -140,10 +142,12 @@ public class Game extends Application{
             playervelocity = playervelocity.add(0,1); //x does not increase in velocity
         for(int i = 0; i < rain.length; i++)
             rain[i].move();
-
+           
+        health.update(player);    
+        
         for(int i = 0; i < build.getButton().size(); i++){
             build.getButton().get(i).function(player);//add buttons to array 
-       }
+        }
         phys.moveY((int)playervelocity.getY(), player);
 
     }
