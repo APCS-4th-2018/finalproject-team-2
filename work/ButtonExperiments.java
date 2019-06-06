@@ -28,7 +28,7 @@ public class ButtonExperiments extends Application  {
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Start Button");
-        
+        /*
         
         //button
         Button button1 = new Button("Start");
@@ -39,7 +39,7 @@ public class ButtonExperiments extends Application  {
         
         //Scene scene = new Scene(hbox, 400, 100);
         
-        String file = "https://resizeimage.net/https://resizeimage.net/mypic/RgXMTi7NIF6fEtHE/iPxsR/bg_start.png";
+        String file = "https://lh3.googleusercontent.com/-yrdopK7xOaM/XOdXHEXMJeI/AAAAAAAAGFw/9X_k5ySNe6oR4RdashVq8AIGybYb2XfcgCK8BGAs/s512/2019-05-23.jpg";
         FileInputStream input = new FileInputStream(file);
         Image image = new Image(input);
         ImageView startPic = new ImageView(image);
@@ -49,6 +49,23 @@ public class ButtonExperiments extends Application  {
         
         Scene scene = new Scene(firstRoot);
         primaryStage.setScene(scene);
+        primaryStage.show();
+        */
+       
+       //Rectangle bg = new Rectangle(720, 950);
+       
+       String file = "https://drive.google.com/uc?id=1BCiUOBTylu7HM0RWpE0t58_qfUZqdHFq";
+       Image image = new Image(file);
+        ImageView startPic = new ImageView(image);
+       
+        Pane root = new Pane();
+        //root.getChildren().addAll(startPic);
+        root.getChildren().add(startPic);
+        Scene start = new Scene(root);
+        primaryStage.setScene(start);
+        primaryStage.setWidth(720);
+        primaryStage.setHeight(950);
+        primaryStage.setResizable(false);
         primaryStage.show();
        
     }
