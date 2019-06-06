@@ -25,6 +25,7 @@ public class Build
     private Lift lift;
     private Ladder ladder;
     private Portal portal;
+    private Charge charge;
     private ArrayList<Button> butt = new ArrayList<Button>();
     public Build(double g, Pane root, Point2D playervelocity) throws Exception
     {
@@ -63,6 +64,10 @@ public class Build
                     platforms.add(portal.getNode());
                     break;
                     
+                    case '5':
+                    charge = new Charge(root, j, i);
+                    butt.add(new ChargeButton( j*60, i*60, root, charge));
+                    platforms.add(charge.getNode());
                     default:
                     break;
                 }

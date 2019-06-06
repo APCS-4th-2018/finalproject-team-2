@@ -8,7 +8,8 @@ import javafx.scene.image.*;
 // */
 public class Health
 {
-
+    private final int FULL = 100;
+    int health = FULL;
     ImageView barimgV;
     public Health(Pane root) throws Exception
     {
@@ -31,5 +32,19 @@ public class Health
     public void update()
     {
         //change imageViewport with the change Listener
+        //implemented in update class
+    }
+    public boolean isAlive()
+    {
+        if(health < 1)
+            return false;
+        else
+            return true;
+    }
+    
+    public void setFull()
+    {
+        health = FULL;
+        //addListener part;
     }
 }

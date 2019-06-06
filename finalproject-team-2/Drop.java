@@ -33,6 +33,9 @@ public class Drop
     }
     public void fall()
     {
+        vel.add(0,1);
+        if(vel.getY() < 10)
+        posY += vel.getY();
         phys.moveY(posY, drop);
     }
     public void show()

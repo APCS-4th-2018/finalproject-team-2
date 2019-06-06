@@ -17,8 +17,8 @@ public class Charge
      */
     public Charge(Pane root, int j, int i)
     {
-        width = 100;//(int)pic.getFitWidth();
-        height = 200;//(int)pic.getFitHeight();
+        width = 180;//(int)pic.getFitWidth();
+        height = 240;//(int)pic.getFitHeight();
         platform = Game.createEntity(j*60, i*60, width, height, Color.DARKSEAGREEN, root);
     }
     
