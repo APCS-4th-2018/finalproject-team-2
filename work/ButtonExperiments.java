@@ -4,10 +4,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-
+import javafx.scene.shape.Rectangle;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-
 import javafx.application.Application; 
 import javafx.scene.Scene; 
 import javafx.scene.control.*; 
@@ -25,32 +24,33 @@ import javafx.scene.Group;
 import javafx.scene.paint.*; 
 
 public class ButtonExperiments extends Application  {
-
+    Pane firstRoot = new Pane();
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Start Button");
-
         
+        
+        //button
         Button button1 = new Button("Start");
         button1.setStyle("-fx-background-color: LIGHTBLUE; -fx-font-size: 2em; ");
         HBox hbox = new HBox(button1);
         hbox.setSpacing(10);
         hbox.setAlignment(Pos.CENTER); 
-
-       FileInputStream input = new FileInputStream("f:\\gfg.png"); 
-  
-            // create a image 
-           
-  
-            // create Background 
-          
-          
-  
-
-
-        Scene scene = new Scene(hbox, 400, 100);
+        
+        //Scene scene = new Scene(hbox, 400, 100);
+        
+        String file = "https://resizeimage.net/https://resizeimage.net/mypic/RgXMTi7NIF6fEtHE/iPxsR/bg_start.png";
+        FileInputStream input = new FileInputStream(file);
+        Image image = new Image(input);
+        ImageView startPic = new ImageView(image);
+        
+        Rectangle bg = new Rectangle(720,950);
+        firstRoot.getChildren().add(startPic);
+        
+        Scene scene = new Scene(firstRoot);
         primaryStage.setScene(scene);
         primaryStage.show();
+       
     }
 
     public static void main(String[] args) {
