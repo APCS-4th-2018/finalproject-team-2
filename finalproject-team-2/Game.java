@@ -28,6 +28,7 @@ public class Game extends Application{
     Build build;
     PhysicsMove phys;
     private static boolean canJump = true;
+    Health health;
 
     private Pane appRoot = new Pane();
     private Pane gameRoot = new Pane();
@@ -83,7 +84,7 @@ public class Game extends Application{
         rain = new Rain02(gameRoot);
         build = new Build(10,gameRoot, playervelocity);
         phys = new PhysicsMove(build.getPlatform());
-
+        health = new Health(gameRoot);
         //cam
         String line;
         levelWidth = LevelData.getLevel1()[0].length()*60;

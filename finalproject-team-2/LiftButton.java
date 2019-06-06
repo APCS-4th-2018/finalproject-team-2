@@ -26,8 +26,8 @@ public class LiftButton extends Button
     private Build build;
     private PhysicsMove phys;
     private Pane groot;
-    private PathTransition ptr, ptrp;
-    private Line path, pathp;
+    private PathTransition ptr, ptrRev, ptrp;
+    private Line path,pathRev, pathp;
     private double posX, posY;
     private Group liftGroup;
   
@@ -46,21 +46,29 @@ public class LiftButton extends Button
         posX = myLift.getTranslateX()+75;
         posY = myLift.getTranslateY()+20;
         path = new Line(posX, posY, posX, posY - 500);//moves up 500 and back
-        pathp = new Line(posX, posY+10, posX, posY - 500);
-        
+        pathRev = new Line(posX, posY-500, posX, posY); // moves back to original coordinates
+        pathp = new Line(posX, posY+10, posX, posY - 500);// path for the player
+        // reverse path not needed for the player as player will get off at the platform
 
         
         //transition - initialize
         ptr = new PathTransition();
         ptr.setNode(myLift);
-        ptr.setDuration(Duration.seconds(3));
+        ptr.setDuration(Duration.seconds(1.5));
         ptr.setPath(path);
         ptr.setCycleCount(2);
         ptr.setAutoReverse(true);
         
+        //ptrRev = new PathTransition();
+        //ptrRev.setNode(myLift);
+        //ptrRev.setDuration(Duration.seconds(0.5));
+        //ptrRev.setPath(pathRev);
+        //ptrRev.setCycleCount(1);
+        
+        
         //transition - player
         ptrp = new PathTransition();
-        ptrp.setDuration(Duration.seconds(3));
+        ptrp.setDuration(Duration.seconds(1.5));
         ptrp.setCycleCount(1);
         //ptrp.setAutoReverse(true);
       
@@ -73,6 +81,7 @@ public class LiftButton extends Button
         //phys = new PhysicsMove(build.getPlatform());
         if(isPressed(player)){
             
+            //move the player up the lift
             pathp.setStartX(player.getTranslateX());
             pathp.setStartY(player.getTranslateY());
             pathp.setEndX(player.getTranslateX());
@@ -81,11 +90,18 @@ public class LiftButton extends Button
             ptrp.setNode(player);
             ptrp.play();
             
-            //liftGroup.getChildren().add(player);
+            //move the lift up
             ptr.play();
-            //phys.moveY(-10,player);
             
-            
+            //reverse the lift and take it back to base platform
+            //path.setStartX(myLift.getTranslateX());
+            //path.setStartY(myLift.getTranslateY());
+            //path.setEndX(myLift.getTranslateX());
+            //path.setEndY(myLift.getTranslateY() +300);
+            //ptr.setPath(path);
+            //ptr.setDuration(Duration.seconds(0.5));
+            //ptr.setCycleCount(1);
+            //ptrRev.play();
         }
     }
     
