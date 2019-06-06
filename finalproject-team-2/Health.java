@@ -1,6 +1,8 @@
 import javafx.scene.layout.Pane;
 import javafx.scene.image.*;
 import javafx.scene.Node;
+
+import javafx.geometry.Rectangle2D;
 /**
  * Write a description of class Health here.
  *
@@ -9,9 +11,10 @@ import javafx.scene.Node;
 // */
 public class Health
 {
-    private final int FULL = 100;
+    private final int FULL = 200;
     int health = FULL;
     ImageView barimgV;
+    int width;
     public Health(Pane root) throws Exception
     {
         barimgV = Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\healthbar2.png");
@@ -26,10 +29,9 @@ public class Health
     }
     public void update(Node player)
     {
-        
+        health--;
         barimgV.setTranslateY(player.getTranslateY()-750);
-        //change imageViewport with the change Listener
-        //implemented in update class
+        barimgV.setViewport(new Rectangle2D(0,0,health,20));
     }
     public boolean isAlive()
     {

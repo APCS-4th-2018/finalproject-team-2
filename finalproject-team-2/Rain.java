@@ -18,7 +18,7 @@ public class Rain
    private int height;
    private int dVel = 1;
    private Point2D vel;
-   private Node[] drops = new Node[30];
+   private Node[] drops = new Node[35];
    private Build phys;
    private PhysicsMove physMove;
    public Rain(Pane groot) throws Exception
