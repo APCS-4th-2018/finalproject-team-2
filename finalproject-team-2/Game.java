@@ -7,11 +7,13 @@ import javafx.geometry.Point2D;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.*;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.image.*;
 import javafx.scene.Group;
+import javafx.scene.control.Button;
+
 import javafx.geometry.Rectangle2D;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -32,7 +34,6 @@ public class Game extends Application{
 
     private Pane appRoot = new Pane();
     private Pane gameRoot = new Pane();
-    private Pane healthRoot = new Pane();
     private Pane all = new Pane();
     //player node
     private Node player;
@@ -51,18 +52,36 @@ public class Game extends Application{
     
     //stage
     private Death death;
+    //private Play play;
+    
+    //Scenes
+    Scene start, play;
     @Override
     public void start(Stage stage) throws Exception
     {
-        initContent();
-        Scene scene = new Scene(appRoot);
-        scene.setOnKeyPressed(event -> keys.put(event.getCode(), true));
-        scene.setOnKeyReleased(event -> keys.put(event.getCode(), false));
+        //stage initializations
         stage.setTitle("wazzup0");
         stage.setWidth(720);
         stage.setHeight(950);
-        stage.setScene(scene);
         stage.setResizable(false);
+        
+        //start scene
+        Button button1= new Button("Go to scene 2");
+        button1.setOnAction(e -> stage.setScene(play));   
+        VBox layout1 = new VBox(20);     
+        layout1.getChildren().addAll( button1);
+        start =  new Scene(layout1, 300, 250);
+        
+        initContent();
+        
+        play = new Scene(appRoot);
+        play.setOnKeyPressed(event -> keys.put(event.getCode(), true));
+        play.setOnKeyReleased(event -> keys.put(event.getCode(), false));
+        
+        
+        
+        stage.setScene(start);
+        
         stage.show();
 
         AnimationTimer timer = new AnimationTimer(){
@@ -146,8 +165,7 @@ public class Game extends Application{
             rain[i].move();
            
         health.update(player);    
-        if(health.isAlive())
-            //death.show();
+
         for(int i = 0; i < build.getButton().size(); i++){
             build.getButton().get(i).function(player);//add buttons to array 
         }

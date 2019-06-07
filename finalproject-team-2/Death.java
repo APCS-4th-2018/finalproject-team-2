@@ -14,12 +14,17 @@ public class Death
     Stage stage;
     public Death()
     { 
+        
+    }
+    public void show()
+    {
+        
         stage = new Stage();
         
         Label label = new Label("Congrats you died! lol");
         
         scene = new Scene(label, 100,150);
         stage.setScene(scene);
+        stage.show();
     }
-    public void show(){stage.show();}
 }
