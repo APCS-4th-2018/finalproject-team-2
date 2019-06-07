@@ -59,7 +59,7 @@ public class Build
                     break;
                     
                     case '3':
-                    ladder = new Ladder(root, j , i,Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\ladder2.jpg"));
+                    ladder = new Ladder(root, j , i,Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\ladder3.png"));
                     butt.add(new LadderButton(j*60, i*60, root, ladder));
                     break;
                     
