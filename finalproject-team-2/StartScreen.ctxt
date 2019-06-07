@@ -4,4 +4,6 @@ comment1.params=stage
 comment1.target=StartScreen(javafx.stage.Stage)
 comment2.params=
 comment2.target=javafx.scene.Scene\ getScene()
-numComments=3
+comment3.params=
+comment3.target=javafx.scene.layout.VBox\ getVbox()
+numComments=4

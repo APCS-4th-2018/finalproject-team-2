@@ -48,6 +48,7 @@ public class Game extends Application{
 
     //StartScene
     StartScreen myStart;
+    VBox startBox ;
     
     //player sprite
     Sprite sprite;
@@ -80,13 +81,15 @@ public class Game extends Application{
         stage.setResizable(false);
         
         //start scene
-        //Button button1= new Button("Go to scene 2");
-        //button1.setOnAction(e -> stage.setScene(play));   
+        Button button1= new Button("Go to scene 2");
+        button1.setOnAction(e -> stage.setScene(play));   
         //VBox layout1 = new VBox(20);     
         //layout1.getChildren().addAll( button1);
         //start =  new Scene(layout1, 300, 250);
         myStart = new StartScreen(stage);
-        start = myStart.getScene();
+        startBox = myStart.getVbox();
+        startBox.getChildren().add(button1);
+        start = new Scene(startBox,800,800);
         
         //play scene
         initContent();

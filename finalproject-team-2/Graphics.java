@@ -142,7 +142,7 @@ public class Graphics
      * 
      * @return   ImageView of cloud platform 
      */
-    public static ImageView getCloudPlatform(){ return cloudPlatform; }
+        public static ImageView getCloudPlatform(){ return cloudPlatform; }
     /**
      * returns ImageView of a cloud
      * 

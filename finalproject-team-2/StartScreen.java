@@ -16,6 +16,7 @@ import javafx.scene.image.*;
 public class StartScreen { 
 
     Scene myScene;
+    VBox vbox;
     private ImageView bgImg;
     
     // launch the application 
@@ -67,7 +68,7 @@ public class StartScreen {
             text_flow.setLineSpacing(20.0f); 
 
             // create VBox 
-            VBox vbox = new VBox(text_flow); 
+            vbox = new VBox(text_flow); 
 
             // set alignment of vbox 
             vbox.setAlignment(Pos.CENTER); 
@@ -104,7 +105,7 @@ public class StartScreen {
             fade4.play();;
 
             // create a scene 
-            myScene = new Scene(vbox, 800, 800); 
+            //myScene = new Scene(vbox, 800, 800); 
         } 
 
         catch (Exception e) { 
@@ -118,5 +119,9 @@ public class StartScreen {
         return myScene;
     }
 
+    public VBox getVbox()
+    {
+        return vbox;
+    }
 } 
 
