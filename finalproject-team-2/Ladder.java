@@ -19,7 +19,11 @@ public class Ladder
     {
         width = 150;//(int)pic.getFitWidth();
         height = 300;//(int)pic.getFitHeight();
-        platform = Game.createEntity(j*60, i*60, width, height, Color.BURLYWOOD, root);
+        //platform = Game.createEntity(j*60, i*60, width, height, Color.BURLYWOOD, root);
+        platform = pic;
+        platform.setTranslateX(j*60);
+        platform.setTranslateY(i*60);
+        root.getChildren().add(platform);
     }
 
     public Node getNode(){return platform;}

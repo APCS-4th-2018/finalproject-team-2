@@ -15,11 +15,15 @@ public class Charge
     /**
      * Constructor for objects of class Charge
      */
-    public Charge(Pane root, int j, int i)
+    public Charge(Pane root, int j, int i) throws Exception
     {
         width = 180;//(int)pic.getFitWidth();
         height = 240;//(int)pic.getFitHeight();
-        platform = Game.createEntity(j*60, i*60, width, height, Color.DARKSEAGREEN, root);
+        //platform = Game.createEntity(j*60, i*60, width, height, Color.DARKSEAGREEN, root);
+        platform = Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\chargingStation.png");
+        platform.setTranslateX(j*60);
+        platform.setTranslateY(i*60);
+        root.getChildren().add(platform);
     }
     
     public Node getNode(){return platform;}
