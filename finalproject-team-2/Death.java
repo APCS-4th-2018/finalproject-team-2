@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import javafx.stage.Modality;
 import javafx.scene.image.*;
+import javafx.application.Platform;
 /**
  * Write a description of class Death here.
  *
@@ -20,9 +21,9 @@ public class Death
     private Scene bgSc;
     private ImageView bgImg;
     private Pane root = new Pane();
-    public Death(Scene play)
+    public Death(Scene play, Stage st)
     { 
-        
+        //stage = st;
     }
     public void show()
     {
@@ -30,8 +31,8 @@ public class Death
         stage = new Stage();
         
         //Label label = new Label("Congrats you died! lol");
-        Button button1= new Button("restart");
-        button1.setOnAction(e -> stage.setScene(play));   
+        Button button1= new Button("You are Dead. Restart the game");
+        button1.setOnAction(e -> Platform.exit());   
         VBox layout1 = new VBox(20);     
         layout1.getChildren().addAll( button1);
         death = new Scene(layout1);

@@ -15,6 +15,7 @@ public class ChargeButton extends Button
     double posX, posY;
     Node myCharge; 
     Health health;
+    
     public ChargeButton(int charX, int charY, Pane root, Charge charge) throws Exception
     {
        super.button = Game.createEntity(charX+80, charY+220, 20, 20, Color.RED, root);
@@ -25,8 +26,8 @@ public class ChargeButton extends Button
     }
     public void function(Node player)
     {
-        if(isPressed(player))
-            health.setFull();
+        //if(isPressed(player))
+          //  health.setFull();
         
     }
     

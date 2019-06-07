@@ -31,6 +31,7 @@ public class Game extends Application{
     PhysicsMove phys;
     private static boolean canJump = true;
     Health health;
+    boolean dead = false;
 
     private Pane appRoot = new Pane();
     private Pane gameRoot = new Pane();
@@ -80,7 +81,7 @@ public class Game extends Application{
         
         
         //death scene
-        death = new Death(play);
+        death = new Death(play, stage);
         
         stage.setScene(start);
         
@@ -91,7 +92,7 @@ public class Game extends Application{
                 public void handle(long now) 
                 {
                     if(stage.getScene().equals(play)) 
-                    update(stage);
+                    update();
                 }
             };
         timer.start();
@@ -118,7 +119,7 @@ public class Game extends Application{
         levelWidth = LevelData.getLevel1()[0].length()*60;
         levelHeight = LevelData.getLevel1().length*60;
         //sprite control box
-        player = createEntity(90,1500,40,40,Color.TRANSPARENT,gameRoot);
+        player = createEntity(200,1500,40,40,Color.TRANSPARENT,gameRoot);
 
         //sprite
         spriteImg = convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\imageedit_1_9167375545.png");
@@ -151,7 +152,7 @@ public class Game extends Application{
         
     }
 
-    private void update(Stage stage) throws Exception
+    private void update() 
     {
 
         //getTranslate computes layoutX - current X position and
@@ -171,10 +172,11 @@ public class Game extends Application{
             rain[i].move();
            
         health.update(player);
-        if(!health.isAlive())
+        if(!health.isAlive() && dead == false) 
         {
             death.show();
-            stage.setScene(death.getScene());
+            dead = true;
+            //stage.setScene(death.getScene());
         }
         for(int i = 0; i < build.getButton().size(); i++){
             build.getButton().get(i).function(player);//add buttons to array 
