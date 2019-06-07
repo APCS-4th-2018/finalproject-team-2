@@ -25,7 +25,7 @@ public class Health
      */
     public Health(Pane root) throws Exception
     {
-        barimgV = Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\healthbar2.png");
+        barimgV = Game.convertImageView("graphics\\healthbar2.png");
         barimgV.setX(160);
         //barimgV.setPreserveRatio(true);
         //barimgV.setFitWidth(200);
@@ -42,7 +42,7 @@ public class Health
     {
         health--;
        
-        barimgV.setTranslateY(player.getTranslateY()-750);
+        barimgV.setTranslateY(player.getTranslateY()-550);
         if (health > 0 & (health % stepsize) == 0 )
         {
              barimgV.setViewport(new Rectangle2D(0,0,health/stepsize,20));

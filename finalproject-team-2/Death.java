@@ -54,7 +54,7 @@ public class Death
 
     public Scene getScene() throws Exception
     {
-       bgImg = Graphics.getDeathScreen();//Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\death screen.jpg");
+       bgImg = Game.convertImageView("graphics\\death screen.jpg");
        root.getChildren().add(bgImg);
        bgSc = new Scene(root);
        return bgSc;

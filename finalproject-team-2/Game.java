@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
 import javafx.animation.*;
 import javafx.application.Application;
 import javafx.geometry.Point2D;
@@ -13,13 +14,14 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.image.*;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
-
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;  
 import javafx.geometry.Rectangle2D;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.FileInputStream;
-
+import java.io.File;
 /**
  * @author Manjari Senthilkumar
  * @version 5/31/2019
@@ -49,23 +51,28 @@ public class Game extends Application{
     //StartScene
     StartScreen myStart;
     VBox startBox ;
-    
+
     //player sprite
     Sprite sprite;
     ImageView spriteImg;
 
     //Rain 
     Rain[] rain = new Rain[5];
-    
+
     //size data
     private int levelWidth;
     private int levelHeight;
-    
+
     //stage
     private Death death;
-    
+
     //Scenes
     Scene start, play;
+    
+    //Music
+    String path = "graphics\\Katherine.mp3";
+    Media media_kat = new Media(new File(path).toURI().toString());
+    MediaPlayer mediaPlayer;
     @Override
     /**
      * This method is called at the launch of the application. This method creates all the scenes and the graphics content within the scene
@@ -79,7 +86,7 @@ public class Game extends Application{
         stage.setWidth(720);
         stage.setHeight(950);
         stage.setResizable(false);
-        
+
         //start scene
         Button button1= new Button("Go to scene 2");
         button1.setOnAction(e -> stage.setScene(play));   
@@ -90,18 +97,21 @@ public class Game extends Application{
         startBox = myStart.getVbox();
         startBox.getChildren().add(button1);
         start = new Scene(startBox,800,800);
-        
+
         //play scene
         initContent();
-        
+
         play = new Scene(appRoot);
         play.setOnKeyPressed(event -> keys.put(event.getCode(), true));
         play.setOnKeyReleased(event -> keys.put(event.getCode(), false));
         
+        //music
         
+        mediaPlayer = new MediaPlayer(media_kat); 
+        mediaPlayer.setAutoPlay(true);
         //death scene
         death = new Death(play, stage);
-        
+
         stage.setScene(start);
         stage.show();
 
@@ -110,12 +120,13 @@ public class Game extends Application{
                 public void handle(long now) 
                 {
                     if(stage.getScene().equals(play)) 
-                    update();
+                        update();
                 }
             };
         timer.start();
     }
-      /**
+
+    /**
      * This method is called from Start method to initialize some of the graphics contents
      * 
      */
@@ -134,7 +145,7 @@ public class Game extends Application{
             rain[i] = new Rain(gameRoot);
         build = new Build(10,gameRoot, playervelocity);
         phys = new PhysicsMove(build.getPlatform());
-        
+
         //cam
         String line;
         levelWidth = LevelData.getLevel1()[0].length()*60;
@@ -143,12 +154,12 @@ public class Game extends Application{
         player = createEntity(200,1500,40,40,Color.TRANSPARENT,gameRoot);
 
         //sprite
-        spriteImg = Graphics.getMainSS();//convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\mainSS.png");
-        spriteImg.setViewport(new Rectangle2D(0,0,37,62));
+        spriteImg = convertImageView("graphics\\mainSS2.png");
+        spriteImg.setViewport(new Rectangle2D(0,0,120,192));
         sprite = new Sprite(
             spriteImg,
             Duration.millis(700),
-            21,7,0,0,37,62,0,0);
+            5,5,0,0,120,192,-60,-100);
         //count, col, offsetx, offsety, widt, height, x, y
         sprite.setCycleCount(Animation.INDEFINITE);
         sprite.play();
@@ -158,21 +169,22 @@ public class Game extends Application{
         player.translateXProperty().addListener((obs, old, newValue) -> {
                 int offset = newValue.intValue();
                 if(offset > 640 && offset < levelWidth - 640){
-                    gameRoot.setLayoutX(-(offset - 640));
+                    gameRoot.setLayoutX(-(offset - 500));
                 }
             });
         player.translateYProperty().addListener((obs, old, newValue) -> {
                 int offset = newValue.intValue();
-                if(offset > 60 && offset < levelHeight - 120){
-                    gameRoot.setLayoutY(-(offset - 800));
+                if(offset > 280 && offset < levelHeight - 300){
+                    gameRoot.setLayoutY(-(offset - 600));
                 }
             });
         health = new Health(gameRoot);
-        
+
         appRoot.getChildren().addAll(gameRoot);
-        
+
     }
-      /**
+
+    /**
      * This method is called periodically to refresh the graphics content such as updating the players position and handling button actions
      * 
      */
@@ -194,7 +206,7 @@ public class Game extends Application{
             playervelocity = playervelocity.add(0,1); //x does not increase in velocity
         for(int i = 0; i < rain.length; i++)
             rain[i].move();
-           
+
         health.update(player);
         if(!health.isAlive() && dead == false) 
         {
@@ -208,7 +220,8 @@ public class Game extends Application{
         phys.moveY((int)playervelocity.getY(), player);
 
     }
-     /**
+
+    /**
      * Handler for Key pressed events
      * @ param key code for the keyboard key that was pressed
      */
@@ -219,9 +232,9 @@ public class Game extends Application{
         return keys.getOrDefault(key, false);
     }
 
-     /**
-       * Sets a flag that determines whether player can jump. Should be called based on collision rules
-       * @param canJump If set to true, player is allowed to jump
+    /**
+     * Sets a flag that determines whether player can jump. Should be called based on collision rules
+     * @param canJump If set to true, player is allowed to jump
      */
     public static void setCanJump(boolean status){canJump = status;}
 
@@ -236,13 +249,14 @@ public class Game extends Application{
             canJump = false;
         }
     }
-      /**
-      * Creates a retangle object at the given coordinates , size and color and returns the object.  It doesn't add the object to the pane
-      * @param x - X coordinate
-      * @param y - Y coordinate
-      * @param w - Width
-      * @param h - Height
-      * @return - Rectangle object that was created
+
+    /**
+     * Creates a retangle object at the given coordinates , size and color and returns the object.  It doesn't add the object to the pane
+     * @param x - X coordinate
+     * @param y - Y coordinate
+     * @param w - Width
+     * @param h - Height
+     * @return - Rectangle object that was created
      */
     public static Node createStandAloneEntity(int x, int y, int w, int h, Paint fill, Pane root)
     {
@@ -253,14 +267,15 @@ public class Game extends Application{
 
         return entity;
     }
-     /**
-      * Creates a retangle object at the given coordinates , size and color and returns the object. It also adds the object to the given pane
-      * @param x - X coordinate
-      * @param y - Y coordinate
-      * @param w - Width
-      * @param h - Height
-      * @param root - Pane to which the object is to be added
-      * @ return  Rectangle object that was created
+
+    /**
+     * Creates a retangle object at the given coordinates , size and color and returns the object. It also adds the object to the given pane
+     * @param x - X coordinate
+     * @param y - Y coordinate
+     * @param w - Width
+     * @param h - Height
+     * @param root - Pane to which the object is to be added
+     * @ return  Rectangle object that was created
      */
 
     public static Node createEntity(int x, int y, int w, int h, Paint fill, Pane root)
@@ -273,12 +288,14 @@ public class Game extends Application{
         root.getChildren().add(entity);
         return entity;
     }
+
     /**
      * main mehtod
      */
     public static void main(String[] args){
         launch(args);}
-         /**
+
+    /**
      * Creates an ImageView from a given image file
      * @param file - path to a file
      * @return ImageView object
@@ -289,7 +306,8 @@ public class Game extends Application{
         Image image = new Image(input);
         return  new ImageView(image);
     }
-     /**
+
+    /**
      * Creates an Image from the given file
      * @param file - Path to a file
      * @return Image object

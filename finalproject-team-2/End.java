@@ -32,11 +32,11 @@ public class End
      */
     public End(Pane root, int j, int i) throws Exception
     {
-        platform = Game.createEntity(j*60, i*60, 150, 40, Color.WHITE, root);
-        //platform = Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\end.jpg");
-        //platform.setTranslateX(j*60);
-        //platform.setTranslateY(i*60);
-        //root.getChildren().add(platform);
+        //platform = Game.createEntity(j*60, i*60, 150, 40, Color.WHITE, root);
+        platform = Game.convertImageView("graphics\\end.jpg");
+        platform.setTranslateX(j*60);
+        platform.setTranslateY(i*60);
+        root.getChildren().add(platform);
     }
     /**
      * accessor
@@ -78,7 +78,7 @@ public class End
         }
         
         //Label label = new Label("Congrats you died! lol");
-        Button button1= new Button("Congratulations... You made my day");
+        Button button1= new Button("Congratulations... You made my day\n\n Press to Exit");
         button1.setOnAction(e -> Platform.exit());   
         button1.relocate(40, 40);
         

@@ -41,7 +41,7 @@ public class EndButton extends Button
      */
     public EndButton( int EndX, int EndY, End end, Pane root)
     {
-        super.button = Game.createEntity(EndX+65, EndY+30, 20, 20, Color.RED, root);
+        super.button = Game.createEntity(EndX+75, EndY+30, 20, 20, Color.RED, root);
         myEnd = end;
         myEndNode = end.getNode();
         groot = root;

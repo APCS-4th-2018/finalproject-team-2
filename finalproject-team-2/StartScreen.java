@@ -30,15 +30,15 @@ public class StartScreen {
     { 
 
         try { 
-            /*
-            //String file = "C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\startScreen.png";
+            
+            String file = "graphics\\startScreen.png";
             try {
                 bgImg = Game.convertImageView(file);
             } catch (java.lang.Exception e) {
                 System.out.println("File not found " + file);
             }
-            */
-            bgImg = Graphics.getStartScreen();
+            
+
             // create TextFlow 
             TextFlow text_flow = new TextFlow(); 
 

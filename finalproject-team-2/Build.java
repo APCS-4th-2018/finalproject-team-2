@@ -56,7 +56,7 @@ public class Build
                     
                     case '1':
                     Node platform = Game.createEntity(j*60, i*60, 60, 60, Color.TRANSPARENT,root);
-                    ImageView block = Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\block.png");
+                    ImageView block = Game.convertImageView("graphics\\block2.png");
                     block.setX(j*60);
                     block.setY(i*60);
                     root.getChildren().add(block);
@@ -70,12 +70,12 @@ public class Build
                     break;
                     
                     case '3':
-                    ladder = new Ladder(root, j , i,Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\ladder3.png"));
+                    ladder = new Ladder(root, j , i,Game.convertImageView("graphics\\ladder3.png"));
                     butt.add(new LadderButton(j*60, i*60, root, ladder));
                     break;
                     
                     case '4' :
-                    portal = new Portal(root, j , i,Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\protal.png")); 
+                    portal = new Portal(root, j , i,Game.convertImageView("graphics\\protal.png")); 
                     butt.add(new PortalButton(root, portal));
                     platforms.add(portal.getNode());
                     break;
