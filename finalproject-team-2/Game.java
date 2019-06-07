@@ -19,10 +19,16 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.FileInputStream;
+
 /**
  * @author Manjari Senthilkumar
  * @version 5/31/2019
- */
+ * 
+ * This is the Main Game Class. 
+ * The start method of this class gets called at the launch of the application. 
+ * Start method invokes init Content is where all the graphics content gets initialized
+ * Update method gets called by the application periodically to refresh the graphics like updating the player's coordinates
+ * */
 public class Game extends Application{
     private HashMap<KeyCode, Boolean> keys = new HashMap<KeyCode, Boolean>();
 
@@ -57,6 +63,11 @@ public class Game extends Application{
     //Scenes
     Scene start, play;
     @Override
+    /**
+     * This method is called at the launch of the application. This method creates all the scenes and the graphics content within the scene
+     * 
+     * @param stage Stage object where the scenes are added. 
+     */
     public void start(Stage stage) throws Exception
     {
         //stage initializations
@@ -97,7 +108,10 @@ public class Game extends Application{
             };
         timer.start();
     }
-
+      /**
+     * This method is called from Start method to initialize some of the graphics contents
+     * 
+     */
     private void initContent() throws Exception
     {
         //background
@@ -151,7 +165,10 @@ public class Game extends Application{
         appRoot.getChildren().addAll(gameRoot);
         
     }
-
+      /**
+     * This method is called periodically to refresh the graphics content such as updating the players position and handling button actions
+     * 
+     */
     private void update() 
     {
 
@@ -184,7 +201,10 @@ public class Game extends Application{
         phys.moveY((int)playervelocity.getY(), player);
 
     }
-
+     /**
+     * Handler for Key pressed events
+     * @ param key code for the keyboard key that was pressed
+     */
     private boolean isPressed(KeyCode key)
     {
         //returns what key was pressed on the level1 table, if no key was pressed
@@ -192,10 +212,15 @@ public class Game extends Application{
         return keys.getOrDefault(key, false);
     }
 
-
+     /**
+       * Sets a flag that determines whether player can jump. Should be called based on collision rules
+       * @param canJump If set to true, player is allowed to jump
+     */
     public static void setCanJump(boolean status){canJump = status;}
 
-  
+    /**
+     * Adds a vertical velocity to the player to enable him to jump, 
+     */
     public void jumpPlayer()
     {
         if(canJump)
@@ -204,7 +229,14 @@ public class Game extends Application{
             canJump = false;
         }
     }
-
+      /**
+      * Creates a retangle object at the given coordinates , size and color and returns the object.  It doesn't add the object to the pane
+      * @param x - X coordinate
+      * @param y - Y coordinate
+      * @param w - Width
+      * @param h - Height
+      * @return - Rectangle object that was created
+     */
     public static Node createStandAloneEntity(int x, int y, int w, int h, Paint fill, Pane root)
     {
         Rectangle entity = new Rectangle(w,h);
@@ -214,6 +246,15 @@ public class Game extends Application{
 
         return entity;
     }
+     /**
+      * Creates a retangle object at the given coordinates , size and color and returns the object. It also adds the object to the given pane
+      * @param x - X coordinate
+      * @param y - Y coordinate
+      * @param w - Width
+      * @param h - Height
+      * @param root - Pane to which the object is to be added
+      * @ return  Rectangle object that was created
+     */
 
     public static Node createEntity(int x, int y, int w, int h, Paint fill, Pane root)
     {
@@ -225,17 +266,27 @@ public class Game extends Application{
         root.getChildren().add(entity);
         return entity;
     }
-
+    /**
+     * main mehtod
+     */
     public static void main(String[] args){
         launch(args);}
-
+         /**
+     * Creates an ImageView from a given image file
+     * @param file - path to a file
+     * @return ImageView object
+     */      
     public static ImageView convertImageView(String file) throws Exception
     {
         FileInputStream input = new FileInputStream(file);
         Image image = new Image(input);
         return  new ImageView(image);
     }
-
+     /**
+     * Creates an Image from the given file
+     * @param file - Path to a file
+     * @return Image object
+     */
     public static Image convertImage(String file) throws Exception
     {
         FileInputStream input = new FileInputStream(file);

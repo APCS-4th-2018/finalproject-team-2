@@ -8,11 +8,13 @@ import javafx.scene.image.*;
 
 import javafx.geometry.Point2D;
 /**
- * Write a description of class Physics here.
+ *  This class constructs all the objects based on LevelData
+ *  LevelData contains information about the type of objects to buid at various X,Y coordinates
  *
  * @author Manjari Senthilkumar
  * @version 06/02/2019
  */
+
 public class Build
 {
     private double gForce;
@@ -28,6 +30,12 @@ public class Build
     private Portal portal;
     private Charge charge;
     private ArrayList<Button> butt = new ArrayList<Button>();
+       /**
+     * Constructor for Build Class
+     * @param g - gravityForce
+     * @param root  - Game root pane
+     * @param playerVelocity - Initial velocity of the player
+     */
     public Build(double g, Pane root, Point2D playervelocity) throws Exception
     {
         //initialize physcs stuff
@@ -78,58 +86,15 @@ public class Build
                 }
         }
     }
-    /*
-    public void moveX(int value, Node entity)
-    {
-        boolean movingRight = value > 0;
-
-        for(int i = 0; i < Math.abs(value); i++)
-        {
-            for(Node platform : platforms)
-                if(entity.getBoundsInParent().intersects(platform.getBoundsInParent()))
-                    if(movingRight){
-                        if(entity.getTranslateX() + 40 == platform.getTranslateX())
-                            return;
-                    }
-                    else
-                    if(entity.getTranslateX() == platform.getTranslateX() + 60)
-                        return;
-            entity.setTranslateX(entity.getTranslateX() + (movingRight ? 1 : -1));
-        }
-    }
-    public void moveY(int value, Node entity)
-    {
-        boolean movingDown = value > 0;
-
-        for(int i = 0; i < Math.abs(value); i++){
-            for(Node platform : platforms)
-                if(entity.getBoundsInParent().intersects(platform.getBoundsInParent()))
-                    if(movingDown){
-                        if(entity.getTranslateY() +40 == platform.getTranslateY())
-                        {
-                            entity.setTranslateY(entity.getTranslateY()-1);
-                            Game.setCanJump(true);
-                            return;
-                        }
-                    }
-                    else
-                    if(entity.getTranslateY() == platform.getTranslateY() + 60)
-                        return;
-            //gravity
-            entity.setTranslateY(entity.getTranslateY() + (movingDown ? 1 : - 1));
-        }
-    }
-
-    public void jumpPlayer()
-    {
-        if(canJump)
-        {
-            playervelocity = playervelocity.add(0,-30);
-            Game.setCanJump(false);
-        }
-    }
-    */
+     /**
+     * Returns the list of platform objects in the scene
+     * @return ArrayList of platform objects
+     */
     public ArrayList<Node> getPlatform(){return platforms;}
+    /**
+     * Returns the list of button objects in the scene
+     * @return ArrayList of button objects
+     */
     public ArrayList<Button> getButton(){return butt;}
    
 }
