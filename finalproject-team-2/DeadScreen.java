@@ -39,16 +39,14 @@ public class DeadScreen
         Stage stage = new Stage();
        
         //set background image
-        Image image = new Image("https://drive.google.com/uc?id=1DJbhQwFR6bxv3fBlOdJZ6vhudywLVRsN");
-        ImageView bg = new ImageView(image);
-        Pane pane = new Pane(bg);
+        Pane pane = new Pane(Graphics.getFront());
         
         //create, add, and modify text
         Label label = new Label("PLAYER DIED");
         pane.getChildren().add(label);
-        label.setTextFill(Color.web("#FFFFFF"));
+        label.setTextFill(Color.web("#8B0000"));
         label.setFont(Font.font("Quicksand", 20));
-        label.setLayoutX(85);
+        label.setLayoutX(70);
         label.setLayoutY(50);
         
         //create, add, and modify restart button
@@ -72,11 +70,12 @@ public class DeadScreen
         quit.setLayoutY(120);
         quit.setEffect(new DropShadow());
         
-        Scene scene = new Scene(pane, 300, 300);
+        Scene scene = new Scene(pane, 250, 250);
         stage.setScene(scene);
         
         stage.initModality(Modality.APPLICATION_MODAL); //prevent user from making changes to main window
         stage.initStyle(StageStyle.UNDECORATED); //removes buttons(minimize, maximize, close)
+        stage.setResizable(false);
         stage.showAndWait();
         return answer;
     }
