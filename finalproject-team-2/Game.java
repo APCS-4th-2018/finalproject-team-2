@@ -192,6 +192,7 @@ public class Game extends Application{
         return keys.getOrDefault(key, false);
     }
 
+
     public static void setCanJump(boolean status){canJump = status;}
 
   

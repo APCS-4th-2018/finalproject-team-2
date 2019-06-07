@@ -14,9 +14,13 @@ public class Lift
     /**
      * Constructor for objects of class Lift
      */
-    public Lift(Pane root, int j, int i)
+    public Lift(Pane root, int j, int i) throws Exception
     {
-       platform = Game.createEntity(j*60, i*60, 150, 40, Color.WHITE, root);
+       //platform = Game.createEntity(j*60, i*60, 150, 40, Color.WHITE, root);
+       platform = Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\cloud-platform.png");
+       platform.setTranslateX(j*60);
+       platform.setTranslateY(i*60);
+       root.getChildren().add(platform);
     }
 
     public Node getNode(){return platform;}
