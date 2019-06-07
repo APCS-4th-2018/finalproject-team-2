@@ -25,7 +25,6 @@ public class Health
         //barimgV.setFitHeight(20);
         //barimgV.setLayoutX(200);
         root.getChildren().add(barimgV);
-        death = new Death();
         
     }
     public void update(Node player)
@@ -33,8 +32,7 @@ public class Health
         health--;
         barimgV.setTranslateY(player.getTranslateY()-750);
         barimgV.setViewport(new Rectangle2D(0,0,health,20));
-        if(!isAlive())
-            death.show();
+
     }
     public boolean isAlive()
     {

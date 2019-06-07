@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.target=Death
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Death\ here.\r\n\r\n\ @author\ Megha\ K,\ Manjari\ Senthilkumar\r\n\ @version\ 06/06/2019\r\n
-comment1.params=
-comment1.target=Death()
+comment1.params=play
+comment1.target=Death(javafx.scene.Scene)
 comment2.params=
 comment2.target=void\ show()
-numComments=3
+comment3.params=
+comment3.target=javafx.scene.Scene\ getScene()
+numComments=4

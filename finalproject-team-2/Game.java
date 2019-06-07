@@ -71,6 +71,7 @@ public class Game extends Application{
         layout1.getChildren().addAll( button1);
         start =  new Scene(layout1, 300, 250);
         
+        //play scene
         initContent();
         
         play = new Scene(appRoot);
@@ -78,6 +79,8 @@ public class Game extends Application{
         play.setOnKeyReleased(event -> keys.put(event.getCode(), false));
         
         
+        //death scene
+        death = new Death(play);
         
         stage.setScene(start);
         
@@ -85,9 +88,10 @@ public class Game extends Application{
 
         AnimationTimer timer = new AnimationTimer(){
                 @Override
-                public void handle(long now){
-                    if(stage.getScene().equals(play))
-                    update();
+                public void handle(long now) 
+                {
+                    if(stage.getScene().equals(play)) 
+                    update(stage);
                 }
             };
         timer.start();
@@ -147,7 +151,7 @@ public class Game extends Application{
         
     }
 
-    private void update()
+    private void update(Stage stage) throws Exception
     {
 
         //getTranslate computes layoutX - current X position and
@@ -166,8 +170,12 @@ public class Game extends Application{
         for(int i = 0; i < rain.length; i++)
             rain[i].move();
            
-        health.update(player);    
-
+        health.update(player);
+        if(!health.isAlive())
+        {
+            death.show();
+            stage.setScene(death.getScene());
+        }
         for(int i = 0; i < build.getButton().size(); i++){
             build.getButton().get(i).function(player);//add buttons to array 
         }
