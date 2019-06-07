@@ -45,10 +45,11 @@ public class Build
                     case '0':
                     break;
                     case '1':
-                    Node platform = Game.createEntity(j*60, i*60, 60, 60, Color.GRAY,root);
+                    Node platform = Game.createEntity(j*60, i*60, 60, 60, Color.TRANSPARENT,root);
                     ImageView block = Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\block.png");
                     block.setX(j*60);
                     block.setY(i*60);
+                    root.getChildren().add(block);
                     platforms.add(platform);
                     break;
                     case '2':
