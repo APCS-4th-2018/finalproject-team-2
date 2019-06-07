@@ -17,11 +17,15 @@ public class Portal
      */
     public Portal(Pane root, int j, int i, ImageView pic)
     {
-        width = 60;//(int)pic.getFitWidth();
+        width = 10;//(int)pic.getFitWidth();
         height = 60;//(int)pic.getFitHeight();
         xpos = j*60 ;
         ypos = i*60 ;
-        platform = Game.createEntity(xpos,ypos, width, height, Color.BLUE, root);
+        //platform = Game.createEntity(xpos,ypos, width, height, Color.BLUE, root);
+        platform = pic;
+        platform.setTranslateX(j*60-50);
+        platform.setTranslateY(i*60);
+        root.getChildren().add(platform);
     }
 
     public Node getNode(){return platform;}

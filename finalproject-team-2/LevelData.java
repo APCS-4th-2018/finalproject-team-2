@@ -43,7 +43,7 @@ public class LevelData
         "000000000000",
         "001110000000",
         "000011100000",
-        "100000111004",
+        "100000111040",
         "110000111111",
         "000001000000",
         "011111000000",
@@ -59,6 +59,7 @@ public class LevelData
         "000000000000",
         "111111111111"
     };
+    /*
     private static final String[] LEVEL1 = new String[] {
     "000000000000",
         "000000000000",
@@ -273,5 +274,6 @@ public class LevelData
         "000000111100",
         "000000000000",
         "666666666666"}; 
-    public static String[] getLevel1(){return LEVEL1;}
+        */
+    public static String[] getLevel1(){return LEVEL2;}
 }

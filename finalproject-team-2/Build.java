@@ -64,7 +64,7 @@ public class Build
                     break;
                     
                     case '4' :
-                    portal = new Portal(root, j , i,Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\stone_texture.jpg")); 
+                    portal = new Portal(root, j , i,Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\protal.png")); 
                     butt.add(new PortalButton(root, portal));
                     platforms.add(portal.getNode());
                     break;

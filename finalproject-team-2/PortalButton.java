@@ -43,6 +43,7 @@ public class PortalButton extends Button
             */
            wait = new PauseTransition(Duration.millis(1000));
            player.setTranslateX(player.getTranslateX()- 600);
+           player.setTranslateY(player.getTranslateY()+300);
     }
     }
 }
