@@ -52,7 +52,6 @@ public class Game extends Application{
     
     //stage
     private Death death;
-    //private Play play;
     
     //Scenes
     Scene start, play;
