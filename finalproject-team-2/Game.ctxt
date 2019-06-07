@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Game
-comment0.text=\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 5/31/2019\r\n
+comment0.text=\n\ @author\ Manjari\ Senthilkumar\n\ @version\ 5/31/2019\n
 comment1.params=stage
 comment1.target=void\ start(javafx.stage.Stage)
 comment10.params=args

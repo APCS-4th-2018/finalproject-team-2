@@ -74,7 +74,7 @@ public class Game extends Application{
         //background
         Rectangle bg = new Rectangle(720,3000);
 
-        ImageView bgImg = convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\gvzpafno.png");
+        ImageView bgImg = convertImageView("/Users/samanthawong/Downloads/https://lh3.googleusercontent.com/-sU0WHXBzuNc/XPgf2IE4paI/AAAAAAAAegI/YCeyusiQdNcHORogjia44DSDgNyxm4C3gCK8BGAs/s512/2019-06-05.png");
         //Image patt = convertImage("https://drive.google.com/uc?id=1DJbhQwFR6bxv3fBlOdJZ6vhudywLVRsN");
         //bgImg.setViewport(new Rectangle2D(0,800,720,1800));
         gameRoot.getChildren().add(bgImg);
@@ -92,7 +92,7 @@ public class Game extends Application{
         player = createEntity(90,2100,40,40,Color.TRANSPARENT,gameRoot);
 
         //sprite
-        spriteImg = convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\imageedit_1_9167375545.png");
+        spriteImg = convertImageView("/Users/samanthawong/Downloads/https://lh3.googleusercontent.com/-DEhdZN-grIw/XPggIcXnp6I/AAAAAAAAegQ/e61XUWDaxZUuytHr_SnSZ0qEOFnQIDT9ACK8BGAs/s259/2019-06-05.png");
         spriteImg.setViewport(new Rectangle2D(0,0,37,62));
         sprite = new Sprite(
             spriteImg,
