@@ -4,6 +4,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.Node;
 import javafx.scene.paint.*;
 import javafx.scene.layout.Pane;
+import javafx.scene.image.*;
 
 import javafx.geometry.Point2D;
 /**
@@ -45,6 +46,9 @@ public class Build
                     break;
                     case '1':
                     Node platform = Game.createEntity(j*60, i*60, 60, 60, Color.GRAY,root);
+                    ImageView block = Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\block.png");
+                    block.setX(j*60);
+                    block.setY(i*60);
                     platforms.add(platform);
                     break;
                     case '2':

@@ -122,7 +122,7 @@ public class Game extends Application{
         player = createEntity(200,1500,40,40,Color.TRANSPARENT,gameRoot);
 
         //sprite
-        spriteImg = convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\imageedit_1_9167375545.png");
+        spriteImg = convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\mainSS.png");
         spriteImg.setViewport(new Rectangle2D(0,0,37,62));
         sprite = new Sprite(
             spriteImg,
