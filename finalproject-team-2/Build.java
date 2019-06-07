@@ -26,6 +26,7 @@ public class Build
     private Point2D playervelocity;
     //Interactable objects
     private Lift lift;
+    private End  end;
     private Ladder ladder;
     private Portal portal;
     private Charge charge;
@@ -52,6 +53,7 @@ public class Build
                 switch(line.charAt(j)){
                     case '0':
                     break;
+                    
                     case '1':
                     Node platform = Game.createEntity(j*60, i*60, 60, 60, Color.TRANSPARENT,root);
                     ImageView block = Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\block.png");
@@ -60,6 +62,7 @@ public class Build
                     root.getChildren().add(block);
                     platforms.add(platform);
                     break;
+                    
                     case '2':
                     lift = new Lift(root, j, i);
                     butt.add(new LiftButton(j*60, i*60, lift, root));
@@ -83,6 +86,14 @@ public class Build
                     platforms.add(charge.getNode());
                     default:
                     break;
+                    
+                    case '7' :
+                    end = new End(root, j, i);
+                    butt.add(new EndButton(j*60, i*60, end, root));
+                    //platforms.add(end.getNode());
+                    break;
+                    
+                
                 }
         }
     }

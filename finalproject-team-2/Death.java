@@ -21,6 +21,8 @@ public class Death
     private Scene bgSc;
     private ImageView bgImg;
     private Pane root = new Pane();
+    
+    
     public Death(Scene play, Stage st)
     { 
         //stage = st;
