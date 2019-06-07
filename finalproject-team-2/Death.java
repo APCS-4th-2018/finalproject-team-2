@@ -5,7 +5,7 @@ import javafx.stage.Stage;
 /**
  * Write a description of class Death here.
  *
- * @author Megha K
+ * @author Megha K, Manjari Senthilkumar
  * @version 06/06/2019
  */
 public class Death

@@ -86,7 +86,10 @@ public class Game extends Application{
 
         AnimationTimer timer = new AnimationTimer(){
                 @Override
-                public void handle(long now){update();}
+                public void handle(long now){
+                    if(stage.getScene().equals(play))
+                    update();
+                }
             };
         timer.start();
     }
