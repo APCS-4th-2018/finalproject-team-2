@@ -39,12 +39,12 @@ public class DeadScreen
         Stage stage = new Stage();
        
         //set background image
-        Pane pane = new Pane(Graphics.getFront());
+        Pane pane = new Pane(Graphics.getDeathScreen());
         
         //create, add, and modify text
         Label label = new Label("PLAYER DIED");
         pane.getChildren().add(label);
-        label.setTextFill(Color.web("#8B0000"));
+        label.setTextFill(Color.web("#FFFFFF"));
         label.setFont(Font.font("Quicksand", 20));
         label.setLayoutX(70);
         label.setLayoutY(50);
@@ -52,7 +52,7 @@ public class DeadScreen
         //create, add, and modify restart button
         Button restart = new Button("RESTART");
         restart.setOnAction(e ->{
-            answer = true;
+            answer = true; //change answer
             stage.close();
         });
         pane.getChildren().add(restart);
