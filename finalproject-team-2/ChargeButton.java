@@ -25,7 +25,7 @@ public class ChargeButton extends Button
     public ChargeButton(int charX, int charY, Pane root, Charge charge) throws Exception
     {
        //inherit
-        super.button = Game.createEntity(charX+80, charY+220, 20, 20, Color.RED, root);
+        super.button = Game.createEntity(charX+80, charY+220, 20, 20, Color.TRANSPARENT, root);
        //initialize data
         myCharge = charge.getNode();
        posX = charX + charge.getWidth()/2.0;

@@ -41,7 +41,7 @@ public class LiftButton extends Button
      */
     public LiftButton( int liftX, int liftY, Lift lift, Pane root)
     {
-        super.button = Game.createEntity(liftX+65, liftY-10, 20, 20, Color.RED, root);
+        super.button = Game.createEntity(liftX+65, liftY-10, 20, 20, Color.TRANSPARENT, root);
         myLift = lift.getNode();
         groot = root;
         //liftGroup = new Group();

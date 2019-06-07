@@ -33,7 +33,7 @@ public class End
     public End(Pane root, int j, int i) throws Exception
     {
         //platform = Game.createEntity(j*60, i*60, 150, 40, Color.WHITE, root);
-        platform = Game.convertImageView("graphics\\end.jpg");
+        platform = Game.convertImageView("graphics\\gem.png");
         platform.setTranslateX(j*60);
         platform.setTranslateY(i*60);
         root.getChildren().add(platform);

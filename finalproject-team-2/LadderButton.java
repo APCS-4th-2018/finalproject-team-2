@@ -29,7 +29,7 @@ public class LadderButton extends Button
     public LadderButton(int ladX, int ladY, Pane root, Ladder ladder)
     {
        //initialize
-        super.button = Game.createEntity(ladX+65, ladY+280, 20, 20, Color.RED, root);
+        super.button = Game.createEntity(ladX+65, ladY+280, 20, 20, Color.TRANSPARENT, root);
        myLadder = ladder.getNode();
        posX = ladX + ladder.getWidth()/2.0;
        posY = ladY + ladder.getHeight();

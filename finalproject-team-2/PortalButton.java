@@ -33,7 +33,7 @@ public class PortalButton extends Button
       
        posY = portal.getYPos()-10;
       //inherit
-       super.button = Game.createEntity(posX, posY, 20,20, Color.RED, root);
+       super.button = Game.createEntity(posX, posY, 20,20, Color.TRANSPARENT, root);
        myPortal = portal.getNode();
        path = new Line(posX,posY,posX,posY-450);     
     }
