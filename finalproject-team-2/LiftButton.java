@@ -31,6 +31,9 @@ public class LiftButton extends Button
     private double posX, posY;
     private Group liftGroup;
   
+    /**
+     * constractor make it possible for the lift to go up and down
+     */
     
     public LiftButton( int liftX, int liftY, Lift lift, Pane root)
     {
@@ -67,6 +70,10 @@ public class LiftButton extends Button
         
     }
     
+    /**
+     * helper method for the lift Button class
+     * makes it possible for lift to go up and down
+     */
     public void function(Node player)
     {
         //build = new Build(0, groot, new Point2D(0,0));
@@ -89,6 +96,9 @@ public class LiftButton extends Button
         }
     }
     
+    /**
+     * prints life going down
+     */
     public void down()
     {
         System.out.println("Lift going down");

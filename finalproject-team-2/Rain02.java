@@ -9,9 +9,17 @@ public class Rain02
 
 {
     private Drop d;
+    
+    /**
+     * sets the specific detail about the rain 
+     */
     public Rain02(Pane root)
     {
         d = new Drop(360,1000,2,10,root);
     }
+    
+    /**
+     * make the rain to fall to the ground
+     */
     public void fall(){d.fall();}
 }

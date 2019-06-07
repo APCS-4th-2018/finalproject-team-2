@@ -24,6 +24,11 @@ public class Build
     //Lift
     private Lift lift;
     private Button butt;
+    
+    /**
+     * uses physics to to build the playerverlocity
+     * 
+     */
     public Build(double g, Pane root, Point2D playervelocity)
     {
         //initialize physcs stuff
@@ -105,7 +110,20 @@ public class Build
         }
     }
     */
-    public ArrayList<Node> getPlatform(){return platforms;}
-    public Button getButton(){return butt;}
+   
+   /**
+    * return the platform
+    */
+    public ArrayList<Node> getPlatform()
+    {
+        return platforms;
+    }
+    /**
+     * returns the button 
+     */
+    public Button getButton()
+    {
+        return butt;
+    }
    
 }

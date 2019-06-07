@@ -9,6 +9,10 @@ public abstract class Button
 {
     protected Node button;
     public abstract void function(Node player);
+    
+    /**
+     * give the player the move to move in the dirction they wants it to move
+     */
     public boolean isPressed(Node player)
     {
         if(player.getBoundsInParent().intersects(button.getBoundsInParent()))

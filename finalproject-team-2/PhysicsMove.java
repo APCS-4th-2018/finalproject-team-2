@@ -14,12 +14,20 @@ public class PhysicsMove
     private ArrayList<Node> platforms;
     private boolean canJump;
     private Point2D playervelocity;
+    
+    /**
+     * intialize the class variables
+     */
     public PhysicsMove(ArrayList<Node> build)
     {
         platforms = build;
         canJump = true;
         playervelocity = new Point2D(0,0);
     }
+    
+    /**
+     * gives the player to power to go left and right
+     */
     public void moveX(int value, Node entity)
     {
         boolean movingRight = value > 0;
@@ -38,6 +46,10 @@ public class PhysicsMove
             entity.setTranslateX(entity.getTranslateX() + (movingRight ? 1 : -1));
         }
     }
+    
+    /**
+     * the charcter would be able to go to the up and down 
+     */
     public void moveY(int value, Node entity)
     {
         boolean movingDown = value > 0;
@@ -73,6 +85,9 @@ public class PhysicsMove
         }
     }
 
+    /**
+     * makes the play to jump 
+     */
     public void jumpPlayer()
     {
         if(canJump)

@@ -19,5 +19,12 @@ public class Lift
        platform = Game.createEntity(j*60, i*60, 150, 40, Color.WHITE, root);
     }
 
-    public Node getNode(){return platform;}
+    /**
+     * return platform of the life
+     * helper method
+     */
+    public Node getNode()
+    {
+        return platform;
+    }
 }

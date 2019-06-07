@@ -21,6 +21,10 @@ public class Rain
    private Node[] drops = new Node[300];
    Build phys;
    PhysicsMove physMove;
+   /**
+    * 
+    * 
+    */
    public Rain(Pane groot)
    {
        for(int i = 0; i < drops.length; i++)
@@ -36,6 +40,9 @@ public class Rain
         physMove = new PhysicsMove(phys.getPlatform());
    }
    
+   /**
+    * 
+    */
    public void move()
    {
        for(int i = 0; i < drops.length; i++){
@@ -44,6 +51,10 @@ public class Rain
        physMove.moveY((int)vel[i].getY(), drops[i]);
     }
    }
+   
+   /**
+    * makes the rain to fall 
+    */
    private void fall(int i)
    {
        vel[i] = vel[i].add(0, dVel);

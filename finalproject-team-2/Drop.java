@@ -19,8 +19,13 @@ public class Drop
     private int ySpeed = 1;
     Build build;
     PhysicsMove phys;
+    
+    /**
+     * the object would be able to fall by using this class
+     */
     public Drop(int x, int y, int w, int h, Pane root)
     {
+        //initialize the variables
         posX = x;
         posY = y;
         width = w;
@@ -31,10 +36,20 @@ public class Drop
         phys = new PhysicsMove(build.getPlatform());
         show();
     }
+    
+    
+    /**
+     * uses physics to make the objects to fal
+     */
     public void fall()
     {
+        //makes it to move it in y axis
         phys.moveY(posY, drop);
     }
+    
+    /**
+     * shows the action on the screen
+     */
     public void show()
     {
         drop = Game.createEntity(posX, posY, width, height, Color.ALICEBLUE, groot);
