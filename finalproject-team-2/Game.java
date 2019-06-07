@@ -49,7 +49,8 @@ public class Game extends Application{
     private int levelWidth;
     private int levelHeight;
     
-
+    //stage
+    private Death death;
     @Override
     public void start(Stage stage) throws Exception
     {
@@ -120,6 +121,7 @@ public class Game extends Application{
                 }
             });
         health = new Health(gameRoot);
+        
         appRoot.getChildren().addAll(gameRoot);
         
     }
@@ -144,7 +146,8 @@ public class Game extends Application{
             rain[i].move();
            
         health.update(player);    
-        
+        if(health.isAlive())
+            //death.show();
         for(int i = 0; i < build.getButton().size(); i++){
             build.getButton().get(i).function(player);//add buttons to array 
         }
