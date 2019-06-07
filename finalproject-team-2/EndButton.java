@@ -70,6 +70,7 @@ public class EndButton extends Button
             gameEnded = true;
         }
     }
+    public  boolean gameEnded(){return gameEnded;}
     
     
 }

@@ -56,7 +56,7 @@ public class Death
      * @return the death scene
      */
 
-    public Scene getScene() throws Exception
+    public Scene getScene()
     {
        //death scene
        bgSc = new Scene(root);

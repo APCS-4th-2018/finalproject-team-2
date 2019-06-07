@@ -64,7 +64,7 @@ public class Game extends Application{
 
     //stage
     private Death death;
-
+    boolean gameEnd= false;
     //Scenes
     Scene start, play;
 
@@ -118,16 +118,9 @@ public class Game extends Application{
                 @Override
                 public void handle(long now) 
                 {
-                    if(stage.getScene().equals(play)) 
+                    if(stage.getScene().equals(play) && !gameEnd) 
                         update(stage);
-                    else
-                    try{
-                        if(stage.getScene().equals(death.getScene()))
-                            death.rainfall();
-                        }
-                        catch (java.lang.Exception e) {
-            System.out.println("File not found ");
-        }
+                    
                 }
             };
         timer.start();
@@ -158,7 +151,7 @@ public class Game extends Application{
         levelWidth = LevelData.getLevel1()[0].length()*60;
         levelHeight = LevelData.getLevel1().length*60;
         //sprite control box
-        player = createEntity(200,1500,40,40,Color.TRANSPARENT,gameRoot);
+        player = createEntity(200,2600,40,40,Color.TRANSPARENT,gameRoot);
 
         //sprite
         spriteImg = convertImageView("graphics\\mainSS2.png");
@@ -219,13 +212,10 @@ public class Game extends Application{
         {
             death.show();
             dead = true;
-            try{
+            gameEnd  = true;
             stage.setScene(death.getScene());
         }
-        catch(java.lang.Exception e) {
-            System.out.println("File not found ");
-        }
-        }
+        
         for(int i = 0; i < build.getButton().size(); i++){
             build.getButton().get(i).function(player);//add buttons to array 
         }
