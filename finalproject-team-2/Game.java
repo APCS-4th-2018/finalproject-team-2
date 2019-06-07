@@ -46,6 +46,9 @@ public class Game extends Application{
     private Node player;
     private Point2D playervelocity = new Point2D(0,0);
 
+    //StartScene
+    StartScreen myStart;
+    
     //player sprite
     Sprite sprite;
     ImageView spriteImg;
@@ -77,11 +80,13 @@ public class Game extends Application{
         stage.setResizable(false);
         
         //start scene
-        Button button1= new Button("Go to scene 2");
-        button1.setOnAction(e -> stage.setScene(play));   
-        VBox layout1 = new VBox(20);     
-        layout1.getChildren().addAll( button1);
-        start =  new Scene(layout1, 300, 250);
+        //Button button1= new Button("Go to scene 2");
+        //button1.setOnAction(e -> stage.setScene(play));   
+        //VBox layout1 = new VBox(20);     
+        //layout1.getChildren().addAll( button1);
+        //start =  new Scene(layout1, 300, 250);
+        myStart = new StartScreen(stage);
+        start = myStart.getScene();
         
         //play scene
         initContent();
@@ -95,7 +100,6 @@ public class Game extends Application{
         death = new Death(play, stage);
         
         stage.setScene(start);
-        
         stage.show();
 
         AnimationTimer timer = new AnimationTimer(){
