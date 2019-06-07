@@ -12,7 +12,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.*;
 
 /**
- * Write a description of class Lift here.
+ * End class - end scene/stage
  *
  * @author Manjari Senthilkumar
  * @version 06/03/2019
@@ -38,9 +38,14 @@ public class End
         //platform.setTranslateY(i*60);
         //root.getChildren().add(platform);
     }
-
+    /**
+     * accessor
+     * @return platform node - jewel node
+     */
     public Node getNode(){return platform;}
-
+    /**
+     * show end scene
+     */
     public void show() 
     {
 
@@ -59,10 +64,13 @@ public class End
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();
     }
-
+    /**
+     * accessor
+     * @return end Scene
+     */
     public Scene getScene() 
     {
-        String file = "C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\endScreen.png";
+        String file = "graphics\\endScreen.png";
         try {
             bgImg = Game.convertImageView(file);
         } catch (java.lang.Exception e) {

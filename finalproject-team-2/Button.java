@@ -1,6 +1,6 @@
 import javafx.scene.Node;
 /**
- * Abstract class Button - write a description of the class here
+ * Abstract class Button -inherited by other buttons that work on character "press"
  *
  * @author Manjari Senthilkumar
  * @version 06/03/2019
@@ -8,7 +8,15 @@ import javafx.scene.Node;
 public abstract class Button
 {
     protected Node button;
+    /**
+     * perform function of button with the @param player
+     */
     public abstract void function(Node player);
+       /**
+     * check bound intersections of player and button
+     * @param playyer
+     * @return boolean true if pressed, fales if not
+     */
     public boolean isPressed(Node player)
     {
         if(player.getBoundsInParent().intersects(button.getBoundsInParent()))

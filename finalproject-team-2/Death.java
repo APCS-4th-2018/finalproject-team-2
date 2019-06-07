@@ -8,9 +8,9 @@ import javafx.stage.Modality;
 import javafx.scene.image.*;
 import javafx.application.Platform;
 /**
- * Write a description of class Death here.
+ * When char dies
  *
- * @author Megha K, Manjari Senthilkumar
+ * @author Manjari Senthilkumar
  * @version 06/06/2019
  */
 public class Death
@@ -22,11 +22,16 @@ public class Death
     private ImageView bgImg;
     private Pane root = new Pane();
     
-    
+    /**
+     * constructs death object
+     */
     public Death(Scene play, Stage st)
     { 
         //stage = st;
     }
+      /**
+     * shows exit screen - new stage
+     */
     public void show()
     {
         
@@ -42,9 +47,14 @@ public class Death
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();
     }
+    /**
+     * gives death scene to be implemented
+     * @return the death scene
+     */
+
     public Scene getScene() throws Exception
     {
-       bgImg = Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\death screen.jpg");
+       bgImg = Graphics.getDeathScreen();//Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\death screen.jpg");
        root.getChildren().add(bgImg);
        bgSc = new Scene(root);
        return bgSc;

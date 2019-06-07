@@ -3,7 +3,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.*;
 import javafx.scene.image.*;
 /**
- * Write a description of class Ladder here.
+ * class Ladder here.
  *
  * @author Manjari Senthilkumar 
  * @version 6/4/2019
@@ -13,7 +13,7 @@ public class Ladder
     private Node platform;
     private int width, height;
     /**
-     * Constructor for objects of class Lift
+     * Constructor for objects of class Ladder
      */
     public Ladder(Pane root, int j, int i, ImageView pic)
     {
@@ -25,10 +25,17 @@ public class Ladder
         platform.setTranslateY(i*60);
         root.getChildren().add(platform);
     }
-
+       /**
+     * @return node of platform
+     */
     public Node getNode(){return platform;}
-    
+    /**
+     * @return width of platform
+     */
     public int getWidth(){return width;}
-    
+     /**
+     * @return height of platform
+     */
+
     public int getHeight(){return height;}
 }

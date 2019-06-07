@@ -1,13 +1,16 @@
 #BlueJ class context
 comment0.target=End
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Lift\ here.\r\n\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 06/03/2019\r\n
+comment0.text=\r\n\ End\ class\ -\ end\ scene/stage\r\n\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 06/03/2019\r\n
 comment1.params=root\ j\ i
 comment1.target=End(javafx.scene.layout.Pane,\ int,\ int)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Lift\r\n
 comment2.params=
 comment2.target=javafx.scene.Node\ getNode()
+comment2.text=\r\n\ accessor\r\n\ @return\ platform\ node\ -\ jewel\ node\r\n
 comment3.params=
 comment3.target=void\ show()
+comment3.text=\r\n\ show\ end\ scene\r\n
 comment4.params=
 comment4.target=javafx.scene.Scene\ getScene()
+comment4.text=\r\n\ accessor\r\n\ @return\ end\ Scene\r\n
 numComments=5

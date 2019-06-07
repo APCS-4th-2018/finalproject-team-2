@@ -12,7 +12,10 @@ import javafx.scene.shape.*;
 import javafx.animation.FadeTransition;
 import javafx.util.Duration;  
 import javafx.scene.image.*;
-
+/**
+ * @author Marwa Danish, Manjari Senthilkumar
+ * @version 06/07/2019
+ */
 public class StartScreen { 
 
     Scene myScene;
@@ -20,18 +23,22 @@ public class StartScreen {
     private ImageView bgImg;
     
     // launch the application 
+    /**
+     * constructor to launch scene
+     */
     public StartScreen(Stage stage) 
     { 
 
         try { 
-
-            String file = "C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\startScreen.png";
+            /*
+            //String file = "C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\startScreen.png";
             try {
                 bgImg = Game.convertImageView(file);
             } catch (java.lang.Exception e) {
                 System.out.println("File not found " + file);
             }
-
+            */
+            bgImg = Graphics.getStartScreen();
             // create TextFlow 
             TextFlow text_flow = new TextFlow(); 
 

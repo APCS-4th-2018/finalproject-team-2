@@ -7,7 +7,7 @@ import javafx.animation.PathTransition;
 
 import javafx.util.Duration;
 /**
- * Write a description of class LadderButton here.
+ *  This class represents LadderButton, which when pressed takes the player up the ladder.
  *
  * @author Manjari Senthilkumar
  * @version 06/04/2019
@@ -18,6 +18,13 @@ public class LadderButton extends Button
     private Node myLadder;
     private Line path;
     private double posX, posY;
+       /**
+     * Constructor for LadderButton
+     * @param ladder x, y coordinates
+     * @param root pane
+     * @param ladder object
+     * initialize and construts button
+     */
     public LadderButton(int ladX, int ladY, Pane root, Ladder ladder)
     {
        super.button = Game.createEntity(ladX+65, ladY+280, 20, 20, Color.RED, root);
@@ -26,7 +33,10 @@ public class LadderButton extends Button
        posY = ladY + ladder.getHeight();
        
     }
-    
+     /**
+     * performs function if @param player intersects bounds with button
+     */
+
     public void function(Node player)
     {
         if(super.isPressed(player)){

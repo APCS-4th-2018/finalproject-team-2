@@ -15,7 +15,7 @@ import javafx.util.Duration;
 import java.util.Timer; 
 import java.util.TimerTask; 
 /**
- * Write a description of class LiftButton here.
+ * class LiftButton here.
  *
  * @author Manjari Senthilkumar
  * @version 06/03/2019
@@ -32,6 +32,12 @@ public class LiftButton extends Button
     private Group liftGroup;
   
     
+    /**
+     * @param lift x, y coordinates
+     * @param root pane
+     * @param lift object
+     * initialize and construts button
+     */
     public LiftButton( int liftX, int liftY, Lift lift, Pane root)
     {
         super.button = Game.createEntity(liftX+65, liftY-10, 20, 20, Color.RED, root);
@@ -74,7 +80,10 @@ public class LiftButton extends Button
       
         
     }
-    
+     /**
+     * performs lift function if button isPressed 
+     * @param player who presses
+     */
     public void function(Node player)
     {
         //build = new Build(0, groot, new Point2D(0,0));

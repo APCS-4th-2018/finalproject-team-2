@@ -275,5 +275,8 @@ public class LevelData
         "000000000000",
         "666666666666"}; 
         */
+       /**
+        * @returns Level data
+        */
     public static String[] getLevel1(){return LEVEL2;}
 }

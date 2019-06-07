@@ -4,7 +4,7 @@ import javafx.scene.Node;
 
 import javafx.geometry.Rectangle2D;
 /**
- * Write a description of class Health here.
+ * Health class
  *
  * @author Manjari Senthilkumar
  * @version 6/5/2019
@@ -19,6 +19,10 @@ public class Health
     int width;
     Death death;
     Node myPlayer;
+      /**
+     * constructs and initializes health object
+     * @param root pane
+     */
     public Health(Pane root) throws Exception
     {
         barimgV = Game.convertImageView("C:\\Users\\Manjari\\Desktop\\platform game\\graphics\\healthbar2.png");
@@ -30,7 +34,10 @@ public class Health
         root.getChildren().add(barimgV);
 
     }
-
+    /** 
+     * decrement health
+     * set health bar constantly on top of screen, refer to player
+     */
     public void update(Node player)
     {
         health--;
@@ -41,7 +48,9 @@ public class Health
              barimgV.setViewport(new Rectangle2D(0,0,health/stepsize,20));
         }
     }
-
+     /**
+     * @return true if alive false if not
+     */
     public boolean isAlive()
     {
         if(health < 1)
@@ -49,7 +58,9 @@ public class Health
         else
             return true;
     }
-
+    /**
+     * set Full 
+     */
     public void setFull()
     {
         health = FULL;

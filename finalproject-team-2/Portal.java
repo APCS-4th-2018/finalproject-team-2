@@ -3,7 +3,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.*;
 import javafx.scene.image.*;
 /**
- * Write a description of class Ladder here.
+ *  class portal here.
  *
  * @author Manjari Senthilkumar 
  * @version 6/4/2019
@@ -13,7 +13,7 @@ public class Portal
     private Node platform;
     private int width, height, xpos,ypos;
     /**
-     * Constructor for objects of class Lift
+     * Constructor for objects of class Portal, initialize node data
      */
     public Portal(Pane root, int j, int i, ImageView pic)
     {
@@ -27,14 +27,25 @@ public class Portal
         platform.setTranslateY(i*60);
         root.getChildren().add(platform);
     }
-
+     /**
+     * @return node of portal
+     */
     public Node getNode(){return platform;}
-    
+      /**
+     * @return int of width
+     */
     public int getWidth(){return width;}
-    
+      /**
+     * @return int of height
+     */
+
     public int getHeight(){return height;}
-    
+      /**
+     * @return int of x position
+     */
     public int getXPos() {return xpos;}
-    
+      /**
+     * @return int of y position
+     */
     public int getYPos() {return ypos; }
 }

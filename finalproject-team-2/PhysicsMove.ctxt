@@ -1,14 +1,19 @@
 #BlueJ class context
 comment0.target=PhysicsMove
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ PhysicsMove\ here.\r\n\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 6/4/2019\r\n
+comment0.text=\r\n\ The\ hardest\ class\ in\ all\ of\ eternity\ -\ pseudo\ physics\ simulated\ in\ game\ world\r\n\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 6/4/2019\r\n
 comment1.params=build
 comment1.target=PhysicsMove(java.util.ArrayList)
+comment1.text=\r\n\ @param\ node\ arrayList\ -\ to\ build\ all\ the\ differnt\ things\r\n
 comment2.params=value\ entity
 comment2.target=void\ moveX(int,\ javafx.scene.Node)
+comment2.text=\r\n\ @param\ distance\ of\ movement\r\n\ @param\ what\ to\ move\r\n\ move\ in\ X\ direction\r\n
 comment3.params=value\ entity
 comment3.target=void\ moveY(int,\ javafx.scene.Node)
+comment3.text=\r\n\ @param\ distance\ of\ movement\r\n\ @param\ what\ to\ move\r\n\ move\ in\ Y\ direction\r\n
 comment4.params=value\ entity
 comment4.target=void\ moveYNoColl(int,\ javafx.scene.Node)
+comment4.text=\r\n\ no\ collision\ movement\r\n\ @param\ distance\ of\ movement\r\n\ @param\ what\ to\ move\r\n
 comment5.params=
 comment5.target=void\ jumpPlayer()
+comment5.text=\r\n\ make\ player\ jump\r\n
 numComments=6

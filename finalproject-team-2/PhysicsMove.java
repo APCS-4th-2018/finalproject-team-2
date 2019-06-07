@@ -4,7 +4,7 @@ import javafx.scene.Node;
 import javafx.geometry.Bounds;
 import javafx.geometry.Point2D;
 /**
- * Write a description of class PhysicsMove here.
+ * The hardest class in all of eternity - pseudo physics simulated in game world
  *
  * @author Manjari Senthilkumar
  * @version 6/4/2019
@@ -14,12 +14,20 @@ public class PhysicsMove
     private ArrayList<Node> platforms;
     private boolean canJump;
     private Point2D playervelocity;
+       /**
+     * @param node arrayList - to build all the differnt things
+     */
     public PhysicsMove(ArrayList<Node> build)
     {
         platforms = build;
         canJump = true;
         playervelocity = new Point2D(0,0);
     }
+      /**
+     * @param distance of movement
+     * @param what to move
+     * move in X direction
+     */
     public void moveX(int value, Node entity)
     {
         boolean movingRight = value > 0;
@@ -38,6 +46,11 @@ public class PhysicsMove
             entity.setTranslateX(entity.getTranslateX() + (movingRight ? 1 : -1));
         }
     }
+    /**
+     * @param distance of movement
+     * @param what to move
+     * move in Y direction
+     */
     public void moveY(int value, Node entity)
     {
         boolean movingDown = value > 0;
@@ -72,7 +85,11 @@ public class PhysicsMove
             entity.setTranslateY(ty + (movingDown ? 1 : - 1));
         }
     }
-    
+       /**
+     * no collision movement
+     * @param distance of movement
+     * @param what to move
+     */
     
     public void moveYNoColl(int value, Node entity)
     {
@@ -91,7 +108,9 @@ public class PhysicsMove
             entity.setTranslateY(ty + (movingDown ? 1 : - 1));
         }
     }
-
+     /**
+     * make player jump
+     */
     public void jumpPlayer()
     {
         if(canJump)

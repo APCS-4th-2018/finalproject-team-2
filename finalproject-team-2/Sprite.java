@@ -1,4 +1,7 @@
-import javafx.animation.Interpolator;
+    /**
+     * sets up transition
+     * @param num involved wiht calculating offsets
+     */import javafx.animation.Interpolator;
 import javafx.animation.Transition;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.image.ImageView;
@@ -9,8 +12,8 @@ import javafx.scene.input.KeyCode;
 import javafx.beans.property.DoubleProperty;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-
 /**
+ * sets up sprite animation 
  * @author Manjari Senthilkumar
  * @Version 6/1/2019
  */
@@ -28,6 +31,13 @@ public class Sprite extends Transition {
     private int dx, dy;
     private int lastIndex;
     private int vel;
+  
+        /**
+     * constructor for sprite 
+     * @param int count, offsetX, offsetY, columsn, width, hight, initX, initY
+     * 
+     */
+
     public Sprite(
             ImageView imageView, 
             Duration duration, 
@@ -48,7 +58,10 @@ public class Sprite extends Transition {
         setCycleDuration(duration);
         setInterpolator(Interpolator.LINEAR);
     }
-
+    /**
+     * sets up transition
+     * @param num involved wiht calculating offsets
+     */
     protected void interpolate(double k) {
         final int index = Math.min((int) Math.floor(k * count), count - 1);
         if (index != lastIndex) {
@@ -58,32 +71,71 @@ public class Sprite extends Transition {
             lastIndex = index;
         }
     }
+    /**
+     * @return offsetX
+     */
     public int getOffsetX(){return offsetX;}
+      /**
+     * @return offsetY
+     */
     public int getOffsetY(){return offsetY;}
+        /**
+     * @return get velocity 
+     */
     public int getVel(){return vel;}
+    /**
+     * @param set velocity 
+     */
     public void setVel(int vel){this.vel = vel;}
+     /**
+     * @param setX
+     */
     public void setX(double x){posX = x; imageView.setX(posX);}
+       /**
+     * @param setY
+     */
     public void setY(double y){posY = y; imageView.setY(posY);}
+    /**
+     * @return translateXproperty of imageView incolved in sprite
+     */
     public DoubleProperty translateXProperty(){return imageView.translateXProperty();}
-
+ /**
+     * @return getTranslated index X
+     */
     public double getTranslateX() {
         return imageView.getTranslateX();
     }
+    /**
+     * @return getTranslated index Y
+     */
     public double getTranslateY() {
         return imageView.getTranslateY();
     }
+        /**
+     * @param set translated index X
+     */
     public void setTranslateX(double x){imageView.setTranslateX(x);}
+       /**
+     * @param set translated index Y
+     */
     public void setTranslateY(double y){imageView.setTranslateY(y);}
+       /**
+     * @return get index Y
+     */
     public double getY() {
         
         return posY;
     }
-    
+       /**
+     * @return get index width
+     */
     public int getWidth() {
         
         return width;
     }
-    
+     /**
+     * @return get index height
+     */
     public int getHeight() {
         
         return height;

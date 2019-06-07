@@ -1,12 +1,16 @@
 #BlueJ class context
 comment0.target=Health
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Health\ here.\r\n\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 6/5/2019\r\n//
+comment0.text=\r\n\ Health\ class\r\n\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 6/5/2019\r\n//
 comment1.params=root
 comment1.target=Health(javafx.scene.layout.Pane)
+comment1.text=\r\n\ constructs\ and\ initializes\ health\ object\r\n\ @param\ root\ pane\r\n
 comment2.params=player
 comment2.target=void\ update(javafx.scene.Node)
+comment2.text=\ \r\n\ decrement\ health\r\n\ set\ health\ bar\ constantly\ on\ top\ of\ screen,\ refer\ to\ player\r\n
 comment3.params=
 comment3.target=boolean\ isAlive()
+comment3.text=\r\n\ @return\ true\ if\ alive\ false\ if\ not\r\n
 comment4.params=
 comment4.target=void\ setFull()
+comment4.text=\r\n\ set\ Full\ \r\n
 numComments=5

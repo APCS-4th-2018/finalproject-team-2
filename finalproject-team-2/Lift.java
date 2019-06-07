@@ -2,7 +2,7 @@ import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.*;
 /**
- * Write a description of class Lift here.
+ * Lift platform class
  *
  * @author Manjari Senthilkumar
  * @version 06/03/2019
@@ -22,6 +22,8 @@ public class Lift
        platform.setTranslateY(i*60);
        root.getChildren().add(platform);
     }
-
+    /**
+     * @return platform node
+     */
     public Node getNode(){return platform;}
 }

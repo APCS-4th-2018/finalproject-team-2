@@ -7,7 +7,7 @@ import javafx.animation.*;
 
 import javafx.util.Duration;
 /**
- * Write a description of class portderButton here.
+ * class portderButton here.
  *
  * @author Manjari Senthilkumar
  * @version 06/04/2019
@@ -20,6 +20,11 @@ public class PortalButton extends Button
     private int posX, posY;
     private int width,height;
     private PauseTransition wait;
+    /**
+     * initialize constructor
+     * @param root pane
+     * @param portal class
+     */
     public PortalButton(Pane root, Portal portal)
     {
        posX = portal.getXPos() + portal.getWidth()/2-10;
@@ -30,7 +35,10 @@ public class PortalButton extends Button
        myPortal = portal.getNode();
        path = new Line(posX,posY,posX,posY-500);     
     }
-    
+    /**
+     * perform function
+     * @param who performs function
+     */
     public void function(Node player)
     {
         if(super.isPressed(player)){

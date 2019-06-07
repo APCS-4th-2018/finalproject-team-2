@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.target=Button
-comment0.text=\r\n\ Abstract\ class\ Button\ -\ write\ a\ description\ of\ the\ class\ here\r\n\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 06/03/2019\r\n
+comment0.text=\r\n\ Abstract\ class\ Button\ -inherited\ by\ other\ buttons\ that\ work\ on\ character\ "press"\r\n\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 06/03/2019\r\n
 comment1.params=player
 comment1.target=void\ function(javafx.scene.Node)
+comment1.text=\r\n\ perform\ function\ of\ button\ with\ the\ @param\ player\r\n
 comment2.params=player
 comment2.target=boolean\ isPressed(javafx.scene.Node)
+comment2.text=\r\n\ check\ bound\ intersections\ of\ player\ and\ button\r\n\ @param\ playyer\r\n\ @return\ boolean\ true\ if\ pressed,\ fales\ if\ not\r\n
 numComments=3

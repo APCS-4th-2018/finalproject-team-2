@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.target=LiftButton
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ LiftButton\ here.\r\n\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 06/03/2019\r\n
+comment0.text=\r\n\ class\ LiftButton\ here.\r\n\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 06/03/2019\r\n
 comment1.params=liftX\ liftY\ lift\ root
 comment1.target=LiftButton(int,\ int,\ Lift,\ javafx.scene.layout.Pane)
+comment1.text=\r\n\ @param\ lift\ x,\ y\ coordinates\r\n\ @param\ root\ pane\r\n\ @param\ lift\ object\r\n\ initialize\ and\ construts\ button\r\n
 comment2.params=player
 comment2.target=void\ function(javafx.scene.Node)
+comment2.text=\r\n\ performs\ lift\ function\ if\ button\ isPressed\ \r\n\ @param\ player\ who\ presses\r\n
 numComments=3

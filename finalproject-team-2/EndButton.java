@@ -33,7 +33,12 @@ public class EndButton extends Button
     private Group EndGroup;
     private boolean gameEnded = false;
   
-    
+    /**
+     * constructs EndButton
+     * @param index X, Y
+     * @param end class
+     * @param root Pane
+     */
     public EndButton( int EndX, int EndY, End end, Pane root)
     {
         super.button = Game.createEntity(EndX+65, EndY+30, 20, 20, Color.RED, root);
@@ -51,7 +56,10 @@ public class EndButton extends Button
        // reverse path not needed for the player as player will get off at the platform
   
     }
-    
+    /**
+     * prompts end scene
+     * @param player node
+     */
     public void function(Node player) 
     {
         //build = new Build(0, groot, new Point2D(0,0));
