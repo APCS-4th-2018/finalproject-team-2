@@ -11,8 +11,9 @@ import javafx.geometry.Rectangle2D;
 // */
 public class Health
 {
-    private final int FULL = 400;
-    private final int stepsize = 1;
+    //instance variables
+    private final int FULL = 2000;
+    private final int stepsize = 5;
     int health = FULL;
     boolean recharged = false;
     ImageView barimgV;
@@ -25,6 +26,7 @@ public class Health
      */
     public Health(Pane root) throws Exception
     {
+        //initialize
         barimgV = Game.convertImageView("graphics\\healthbar2.png");
         barimgV.setX(160);
         //barimgV.setPreserveRatio(true);
@@ -40,8 +42,9 @@ public class Health
      */
     public void update(Node player)
     {
+        //decrement health
         health--;
-       
+        //cam location stable
         barimgV.setTranslateY(player.getTranslateY()-550);
         if (health > 0 & (health % stepsize) == 0 )
         {
@@ -53,6 +56,7 @@ public class Health
      */
     public boolean isAlive()
     {
+        //life stats
         if(health < 1)
             return false;
         else

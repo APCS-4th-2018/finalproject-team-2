@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
 import javafx.animation.*;
 import javafx.application.Application;
 import javafx.geometry.Point2D;
@@ -68,7 +67,7 @@ public class Game extends Application{
 
     //Scenes
     Scene start, play;
-    
+
     //Music
     String path = "graphics\\Katherine.mp3";
     Media media_kat = new Media(new File(path).toURI().toString());
@@ -104,9 +103,9 @@ public class Game extends Application{
         play = new Scene(appRoot);
         play.setOnKeyPressed(event -> keys.put(event.getCode(), true));
         play.setOnKeyReleased(event -> keys.put(event.getCode(), false));
-        
+
         //music
-        
+
         mediaPlayer = new MediaPlayer(media_kat); 
         mediaPlayer.setAutoPlay(true);
         //death scene
@@ -114,13 +113,21 @@ public class Game extends Application{
 
         stage.setScene(start);
         stage.show();
-
+        //implement time
         AnimationTimer timer = new AnimationTimer(){
                 @Override
                 public void handle(long now) 
                 {
                     if(stage.getScene().equals(play)) 
-                        update();
+                        update(stage);
+                    else
+                    try{
+                        if(stage.getScene().equals(death.getScene()))
+                            death.rainfall();
+                        }
+                        catch (java.lang.Exception e) {
+            System.out.println("File not found ");
+        }
                 }
             };
         timer.start();
@@ -188,7 +195,7 @@ public class Game extends Application{
      * This method is called periodically to refresh the graphics content such as updating the players position and handling button actions
      * 
      */
-    private void update() 
+    private void update(Stage stage) 
     {
 
         //getTranslate computes layoutX - current X position and
@@ -212,7 +219,12 @@ public class Game extends Application{
         {
             death.show();
             dead = true;
-            //stage.setScene(death.getScene());
+            try{
+            stage.setScene(death.getScene());
+        }
+        catch(java.lang.Exception e) {
+            System.out.println("File not found ");
+        }
         }
         for(int i = 0; i < build.getButton().size(); i++){
             build.getButton().get(i).function(player);//add buttons to array 

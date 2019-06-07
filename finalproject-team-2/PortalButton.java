@@ -14,6 +14,7 @@ import javafx.util.Duration;
  */
 public class PortalButton extends Button
 {
+    //instance variables
     private PathTransition ptr;
     private Node myPortal;
     private Line path;
@@ -27,10 +28,11 @@ public class PortalButton extends Button
      */
     public PortalButton(Pane root, Portal portal)
     {
-       posX = portal.getXPos() + portal.getWidth()/2-10;
+       //initialize
+        posX = portal.getXPos() + portal.getWidth()/2-10;
       
        posY = portal.getYPos()-10;
-      
+      //inherit
        super.button = Game.createEntity(posX, posY, 20,20, Color.RED, root);
        myPortal = portal.getNode();
        path = new Line(posX,posY,posX,posY-450);     
@@ -42,13 +44,8 @@ public class PortalButton extends Button
     public void function(Node player)
     {
         if(super.isPressed(player)){
-        /*
-            ptr = new PathTransition();
-            ptr.setNode(player);
-            ptr.setDuration(Duration.seconds(2));
-            ptr.setPath(path);
-            //ptr.play();
-            */
+        
+           //transitions
            wait = new PauseTransition(Duration.millis(1000));
            player.setTranslateX(player.getTranslateX()- 600);
            player.setTranslateY(player.getTranslateY()+300);

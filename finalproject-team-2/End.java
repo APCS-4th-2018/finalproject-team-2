@@ -48,7 +48,7 @@ public class End
      */
     public void show() 
     {
-
+        //new stage
         stage = new Stage();
 
         //Label label = new Label("Congrats you died! lol");
@@ -59,7 +59,7 @@ public class End
         //layout1.getChildren().addAll( button1);
         //endScene = new Scene(layout1);
         endScene = getScene();
-
+        //play end scene
         stage.setScene(endScene);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();

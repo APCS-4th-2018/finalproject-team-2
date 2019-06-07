@@ -10,6 +10,7 @@ import javafx.scene.image.*;
  */
 public class Charge
 {
+    //instance variables
     private Node platform;
     private int width, height;
       /**
@@ -20,6 +21,7 @@ public class Charge
 
     public Charge(Pane root, int j, int i) throws Exception
     {
+        //initialize data
         width = 180;//(int)pic.getFitWidth();
         height = 240;//(int)pic.getFitHeight();
         //platform = Game.createEntity(j*60, i*60, width, height, Color.DARKSEAGREEN, root);
@@ -28,7 +30,8 @@ public class Charge
         platform.setTranslateY(i*60);
         root.getChildren().add(platform);
     }
-        /**
+    //getters   
+    /**
      * @return node
      */
     public Node getNode(){return platform;}

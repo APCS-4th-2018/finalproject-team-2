@@ -15,7 +15,7 @@ import java.awt.Graphics2D;
  * @Version 6/1/2019
  */
 public class Sprite extends Transition {
-
+    //instance variables
     private final ImageView imageView;
     private final int count;
     private final int columns;
@@ -62,12 +62,13 @@ public class Sprite extends Transition {
     protected void interpolate(double k) {
         final int index = Math.min((int) Math.floor(k * count), count - 1);
         if (index != lastIndex) {
-            final int x = (index % columns) * width  + offsetX;
-            final int y = (index / columns) * height + offsetY;
-            imageView.setViewport(new Rectangle2D(x, y, width, height));
+            final int x = (index % columns) * width  + offsetX; //going rihgt
+            final int y = (index / columns) * height + offsetY; //going left
+            imageView.setViewport(new Rectangle2D(x, y, width, height)); //the size of each frame
             lastIndex = index;
         }
     }
+    //getters and setters
     /**
      * @return offsetX
      */

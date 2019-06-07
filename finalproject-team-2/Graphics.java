@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
  */
 public class Graphics
 {
+    //images
     private static ImageView man = convertImageView("https://drive.google.com/uc?id=1myW3UWhQDgABQOIDNStdpgK0o6HbH0pE");
     private static ImageView backgroundGradient = convertImageView("https://drive.google.com/uc?id=1bmxuxPDvALQrUw3bH0ZmGNS8VYA0BpAH"); 
     private static ImageView stoneTexture1 = convertImageView("https://drive.google.com/uc?id=11M76ToBu5flOVFFZ0SisDyVV6LyL6Mqa");
@@ -39,7 +40,7 @@ public class Graphics
     private static ImageView riddleScreen = convertImageView("https://drive.google.com/uc?id=1DLrSJDaO8_uisCkgbts1bkWYQ-QLvXsZ");
     private static ImageView startScreen = convertImageView("https://drive.google.com/uc?id=15p6RY6aOJN47GeXAfZqG7BBUP1V4F23Y");
     private static ImageView mainSS = convertImageView("https://drive.google.com/uc?id=1s6AItxVRmCXVuDRp8KhrsOFHpsKGa46M");
-    
+    //getters
     /**
      * creates and returns an ImageView of image with String link
      * 

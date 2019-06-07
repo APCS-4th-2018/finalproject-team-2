@@ -22,6 +22,7 @@ import java.util.TimerTask;
  */
 public class LiftButton extends Button
 {
+    //instance variables
     private Node myLift;
     private Build build;
     private PhysicsMove phys;
@@ -44,11 +45,8 @@ public class LiftButton extends Button
         myLift = lift.getNode();
         groot = root;
         //liftGroup = new Group();
-        
-        // Add the lift to the liftGroup
-        //liftGroup.getChildren().add(myLift);
-        //groot.getChildren().add(liftGroup);
-        
+    
+        //positoins
         posX = myLift.getTranslateX()+75;
         posY = myLift.getTranslateY()+20;
         path = new Line(posX, posY, posX, posY - 500);//moves up 500 and back
@@ -64,12 +62,7 @@ public class LiftButton extends Button
         ptr.setPath(path);
         ptr.setCycleCount(2);
         ptr.setAutoReverse(true);
-        
-        //ptrRev = new PathTransition();
-        //ptrRev.setNode(myLift);
-        //ptrRev.setDuration(Duration.seconds(0.5));
-        //ptrRev.setPath(pathRev);
-        //ptrRev.setCycleCount(1);
+
         
         
         //transition - player
@@ -102,15 +95,7 @@ public class LiftButton extends Button
             //move the lift up
             ptr.play();
             
-            //reverse the lift and take it back to base platform
-            //path.setStartX(myLift.getTranslateX());
-            //path.setStartY(myLift.getTranslateY());
-            //path.setEndX(myLift.getTranslateX());
-            //path.setEndY(myLift.getTranslateY() +300);
-            //ptr.setPath(path);
-            //ptr.setDuration(Duration.seconds(0.5));
-            //ptr.setCycleCount(1);
-            //ptrRev.play();
+           
         }
     }
     

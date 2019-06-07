@@ -12,6 +12,7 @@ import javafx.util.Duration;
  */
 public class ChargeButton extends Button 
 {
+    //instance varaibles
     double posX, posY;
     Node myCharge; 
     Health health;
@@ -23,8 +24,10 @@ public class ChargeButton extends Button
      */
     public ChargeButton(int charX, int charY, Pane root, Charge charge) throws Exception
     {
-       super.button = Game.createEntity(charX+80, charY+220, 20, 20, Color.RED, root);
-       myCharge = charge.getNode();
+       //inherit
+        super.button = Game.createEntity(charX+80, charY+220, 20, 20, Color.RED, root);
+       //initialize data
+        myCharge = charge.getNode();
        posX = charX + charge.getWidth()/2.0;
        posY = charY + charge.getHeight();
        health = new Health(root);
@@ -37,7 +40,7 @@ public class ChargeButton extends Button
     {
         //if(isPressed(player))
           //  health.setFull();
-        
+        //not implemented at the moment
     }
     
 }

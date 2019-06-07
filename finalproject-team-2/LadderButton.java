@@ -14,6 +14,7 @@ import javafx.util.Duration;
  */
 public class LadderButton extends Button
 {
+    //instance variables
     private PathTransition ptr;
     private Node myLadder;
     private Line path;
@@ -27,7 +28,8 @@ public class LadderButton extends Button
      */
     public LadderButton(int ladX, int ladY, Pane root, Ladder ladder)
     {
-       super.button = Game.createEntity(ladX+65, ladY+280, 20, 20, Color.RED, root);
+       //initialize
+        super.button = Game.createEntity(ladX+65, ladY+280, 20, 20, Color.RED, root);
        myLadder = ladder.getNode();
        posX = ladX + ladder.getWidth()/2.0;
        posY = ladY + ladder.getHeight();
@@ -39,6 +41,7 @@ public class LadderButton extends Button
 
     public void function(Node player)
     {
+        //trigger functionality - transition up
         if(super.isPressed(player)){
         ptr = new PathTransition();
         path = new Line(player.getTranslateX(), player.getTranslateY(), player.getTranslateX(), player.getTranslateY()-370);

@@ -1,6 +1,6 @@
  
 /**
- * Write a description of class LevelData here.
+ * Class that maps out data, its like the game map, key is in build
  *
  * @author Manjari Senthilkumar
  * @version 05/31/2019
