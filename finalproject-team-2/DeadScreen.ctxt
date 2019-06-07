@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=DeadScreen
+comment0.text=\r\n\ Write\ a\ description\ of\ JavaFX\ class\ DeadScreen\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=DeadScreen()
+comment1.text=\r\n\ default\ contructor\ that\ initialzes\ answer\ \r\n
+comment2.params=
+comment2.target=boolean\ display()
+comment2.text=\r\n\ invokes\ popup\ screen\ with\ "RESTART"\ and\ "QUIT"\ buttons\r\n\ \r\n\ @return\ \ \ \ \ \ \ \ true\ if\ user\ clicked\ "RESTART"\ and\ false\ if\ user\ clicked\ "QUIT"\r\n
+numComments=3
