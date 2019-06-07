@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=LadderButton
+comment0.text=\r\n\ \ This\ class\ represents\ LadderButton,\ which\ when\ pressed\ takes\ the\ player\ up\ the\ ladder.\r\n\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 06/04/2019\r\n
+comment1.params=ladX\ ladY\ root\ ladder
+comment1.target=LadderButton(int,\ int,\ javafx.scene.layout.Pane,\ Ladder)
+comment1.text=\r\n\ Constructor\ for\ LadderButton\r\n\ @param\ ladder\ x,\ y\ coordinates\r\n\ @param\ root\ pane\r\n\ @param\ ladder\ object\r\n\ initialize\ and\ construts\ button\r\n
+comment2.params=player
+comment2.target=void\ function(javafx.scene.Node)
+comment2.text=\r\n\ performs\ function\ if\ @param\ player\ intersects\ bounds\ with\ button\r\n
+numComments=3

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Build
+comment0.text=\r\n\ \ This\ class\ constructs\ all\ the\ objects\ based\ on\ LevelData\r\n\ \ LevelData\ contains\ information\ about\ the\ type\ of\ objects\ to\ buid\ at\ various\ X,Y\ coordinates\r\n\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 06/02/2019\r\n
+comment1.params=g\ root\ playervelocity
+comment1.target=Build(double,\ javafx.scene.layout.Pane,\ javafx.geometry.Point2D)
+comment1.text=\r\n\ Constructor\ for\ Build\ Class\r\n\ @param\ g\ -\ gravityForce\r\n\ @param\ root\ \ -\ Game\ root\ pane\r\n\ @param\ playerVelocity\ -\ Initial\ velocity\ of\ the\ player\r\n
+comment2.params=
+comment2.target=java.util.ArrayList\ getPlatform()
+comment2.text=\r\n\ Returns\ the\ list\ of\ platform\ objects\ in\ the\ scene\r\n\ @return\ ArrayList\ of\ platform\ objects\r\n
+comment3.params=
+comment3.target=java.util.ArrayList\ getButton()
+comment3.text=\r\n\ Returns\ the\ list\ of\ button\ objects\ in\ the\ scene\r\n\ @return\ ArrayList\ of\ button\ objects\r\n
+numComments=4

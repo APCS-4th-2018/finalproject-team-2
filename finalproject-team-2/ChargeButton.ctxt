@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=ChargeButton
+comment0.text=\r\n\ class\ ChargeButton\ here.\r\n\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 6/6/2019\r\n
+comment1.params=charX\ charY\ root\ charge
+comment1.target=ChargeButton(int,\ int,\ javafx.scene.layout.Pane,\ Charge)
+comment1.text=\r\n\ constructs\ and\ initialize\ \r\n\ @param\ posX\ ,Y\r\n\ @param\ root\ pane\r\n\ @parma\ charge\ object\r\n
+comment2.params=player
+comment2.target=void\ function(javafx.scene.Node)
+comment2.text=\r\n\ @param\ player\r\n\ set\ full\r\n
+numComments=3
