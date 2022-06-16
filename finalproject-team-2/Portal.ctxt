@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Portal
+comment0.text=\r\n\ \ class\ portal\ here.\r\n\r\n\ @author\ Manjari\ Senthilkumar\ \r\n\ @version\ 6/4/2019\r\n
+comment1.params=root\ j\ i\ pic
+comment1.target=Portal(javafx.scene.layout.Pane,\ int,\ int,\ javafx.scene.image.ImageView)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Portal,\ initialize\ node\ data\r\n
+comment2.params=
+comment2.target=javafx.scene.Node\ getNode()
+comment2.text=\r\n\ @return\ node\ of\ portal\r\n
+comment3.params=
+comment3.target=int\ getWidth()
+comment3.text=\r\n\ @return\ int\ of\ width\r\n
+comment4.params=
+comment4.target=int\ getHeight()
+comment4.text=\r\n\ @return\ int\ of\ height\r\n
+comment5.params=
+comment5.target=int\ getXPos()
+comment5.text=\r\n\ @return\ int\ of\ x\ position\r\n
+comment6.params=
+comment6.target=int\ getYPos()
+comment6.text=\r\n\ @return\ int\ of\ y\ position\r\n
+numComments=7

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=StartScreen
+comment0.text=\r\n\ @author\ Marwa\ Danish,\ Manjari\ Senthilkumar\r\n\ @version\ 06/07/2019\r\n
+comment1.params=stage
+comment1.target=StartScreen(javafx.stage.Stage)
+comment1.text=\r\n\ constructor\ to\ launch\ scene\r\n
+comment2.params=
+comment2.target=javafx.scene.Scene\ getScene()
+comment3.params=
+comment3.target=javafx.scene.layout.VBox\ getVbox()
+numComments=4

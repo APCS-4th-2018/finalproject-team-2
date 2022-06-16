@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Death
+comment0.text=\r\n\ When\ char\ dies\r\n\r\n\ @author\ Manjari\ Senthilkumar\r\n\ @version\ 06/06/2019\r\n
+comment1.params=play\ st
+comment1.target=Death(javafx.scene.Scene,\ javafx.stage.Stage)
+comment1.text=\r\n\ constructs\ death\ object\r\n
+comment2.params=
+comment2.target=void\ show()
+comment2.text=\r\n\ shows\ exit\ screen\ -\ new\ stage\r\n
+comment3.params=
+comment3.target=javafx.scene.Scene\ getScene()
+comment3.text=\r\n\ gives\ death\ scene\ to\ be\ implemented\r\n\ @return\ the\ death\ scene\r\n
+comment4.params=
+comment4.target=void\ rainfall()
+numComments=5
